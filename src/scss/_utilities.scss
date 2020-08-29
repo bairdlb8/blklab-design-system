@@ -1,0 +1,310 @@
+//sm: 545px
+//md: 767px
+//lg: 1011
+//xl: 1012
+
+//box-shadow
+//border
+//margin w/ mobile
+//padding w/ mobile
+//font-weight
+//flex
+//display
+//alignment
+//text-align
+//position
+//list-style
+
+@import '_mixins';
+@import '_variables.scss';
+@import '_typography';
+@import '_colors';
+@import '_breakpoints';
+
+$sizes: (
+  n: var(--spacer-0),
+  auto: auto,
+  xxs: var(--spacer-1),
+  xs: var(--spacer-2),
+  sm: var(--spacer-3),
+  md: var(--spacer-4),
+  lg: var(--spacer-5),
+  xl: var(--spacer-6),
+  xxl: var(--spacer-7),
+  xxxl: var(--spacer-8)
+);
+
+$valign: (
+  baseline: baseline,
+  top: top,
+  middle: middle,
+  bottom: bottom,
+  text-top: text-top,
+  text-bottom: text-bottom
+);
+
+$talign: (
+  left: left,
+  center: center,
+  right: right,
+  justify: justify
+);
+
+$display: (
+  block: block,
+  inline-block: inline-block,
+  inline: inline,
+  flex: flex,
+  inline-flex: inline-flex,
+  table: table,
+  table-row: table-row,
+  table-cell: table-cell,
+  flow-root: flow-root,
+  grid: grid,
+  inline-grid: inline-grid,
+  none: none
+);
+
+$flexDirection: (
+  row: row,
+  row-reverse: row-reverse,
+  col: column,
+  col-reverse: column-reverse
+);
+
+$flex: (
+  shrink: 0 1 0%,
+  grow: 1 0 0%,
+  both: 1 1 0%,
+  auto: 1 1 auto,
+  none: none
+);
+
+$fontWeights: (
+  thin: 100,
+  light: 300,
+  normal: 400,
+  medium: 500,
+  bold: 600,
+  thick: 700,
+  black: 800
+);
+
+$opacities: (
+  0: 0,
+  25: 0.25,
+  50: 0.5,
+  75: 0.5,
+  100: 1
+);
+
+$justifyContent: (
+  flex-start: flex-start,
+  flex-end: flex-end,
+  center: center,
+  space-between: space-between,
+  space-around: space-around
+);
+
+$alignItems: (
+  flex-start: flex-start,
+  flex-end: flex-end,
+  center: center,
+  stretch: stretch,
+  baseline: baseline
+);
+
+$textTransforms: (
+  uppercase: uppercase,
+  lowercase: lowercase,
+  capitalize: capitalize,
+  none: none
+);
+
+//Paddings
+@mixin generate($key) {
+  $prefix: '';
+  @if ($key != '') {
+    $prefix: #{$key}-;
+  }
+  .#{$prefix}p {
+    @include modifiers($sizes, 'padding');
+  }
+
+  .#{$prefix}px {
+    @include modifiers($sizes, 'padding-left');
+    @include modifiers($sizes, 'padding-right');
+  }
+
+  .#{$prefix}py {
+    @include modifiers($sizes, 'padding-top');
+    @include modifiers($sizes, 'padding-bottom');
+  }
+
+  .#{$prefix}pl {
+    @include modifiers($sizes, 'padding-left');
+  }
+
+  .#{$prefix}pr {
+    @include modifiers($sizes, 'padding-right');
+  }
+
+  .#{$prefix}pt {
+    @include modifiers($sizes, 'padding-top');
+  }
+
+  .#{$prefix}pb {
+    @include modifiers($sizes, 'padding-bottom');
+  }
+
+  //Margins
+
+  .#{$prefix}m {
+    @include modifiers($sizes, 'margin');
+  }
+
+  .#{$prefix}mx {
+    @include modifiers($sizes, 'margin-left');
+    @include modifiers($sizes, 'margin-right');
+  }
+
+  .#{$prefix}my {
+    @include modifiers($sizes, 'margin-top');
+    @include modifiers($sizes, 'margin-bottom');
+  }
+
+  .#{$prefix}ml {
+    @include modifiers($sizes, 'margin-left');
+  }
+
+  .#{$prefix}mr {
+    @include modifiers($sizes, 'margin-right');
+  }
+
+  .#{$prefix}mt {
+    @include modifiers($sizes, 'margin-top');
+  }
+
+  .#{$prefix}mb {
+    @include modifiers($sizes, 'margin-bottom');
+  }
+
+  //Display
+
+  .#{$prefix}display {
+    @include modifiers($display, 'display');
+  }
+
+  //Flex
+
+  .#{$prefix}flex {
+    @include modifiers($flex, 'flex');
+  }
+
+  .#{$prefix}flex-col {
+    @include columns('flex-basis', 12);
+  }
+
+  .#{$prefix}flex-wrap {
+    flex-wrap: wrap;
+  }
+
+  .#{$prefix}flex-no-wrap {
+    flex-wrap: nowrap;
+  }
+
+  .#{$prefix}flex-wrap-reverse {
+    flex-wrap: wrap-reverse;
+  }
+
+  .#{$prefix}grid-single-column {
+    grid-template-columns: 100% !important;
+  }
+}
+
+@include generate('');
+@each $key, $value in $breakpoints {
+  @media screen and (max-width: $value) {
+    @include generate($key);
+  }
+}
+
+.text-transform {
+  @include modifiers($textTransforms, 'text-transform');
+}
+
+.flex-dir {
+  @include modifiers($flexDirection, 'flex-direction');
+}
+
+.vertical-align {
+  @include modifiers($valign, 'vertical-align');
+}
+
+.text-align {
+  @include modifiers($talign, 'text-align');
+}
+
+.opacity {
+  @include modifiers($opacities, 'opacity');
+}
+
+.font-weight {
+  @include modifiers($fontWeights, 'font-weight');
+}
+
+.justify-content {
+  @include modifiers($justifyContent, 'justify-content');
+}
+
+.justify-items {
+  @include modifiers($alignItems, 'justify-items');
+}
+
+.align-content {
+  @include modifiers($justifyContent, 'align-content');
+}
+
+.align-self {
+  @include modifiers($alignItems, 'align-self');
+}
+
+.align-items {
+  @include modifiers($alignItems, 'align-items');
+}
+
+.line-height-1 {
+  line-height: 1;
+}
+
+//TODO: Make style tokens
+.bad {
+  color: var(--error-color); // #f86161;
+}
+
+.good {
+  color: var(--success-color);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-disabled {
+  cursor: not-allowed;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  word-wrap: normal;
+  border: 0;
+}
+
+.clearfix {
+  display: flow-root;
+}

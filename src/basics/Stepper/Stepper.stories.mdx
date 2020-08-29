@@ -1,0 +1,21 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+
+import Stepper from './Stepper'
+
+<Meta title="Basics / Stepper" component={ Stepper } />
+
+# Stepper
+
+## Add some text here
+
+export const Template = (args) => {
+  return <Stepper {...args} />
+}
+
+<Preview withToolbar>
+  <Story name="Primary" args={ {} }>
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props of={ Stepper } />

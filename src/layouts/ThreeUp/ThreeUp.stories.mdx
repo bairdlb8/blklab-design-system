@@ -1,0 +1,21 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+
+import ThreeUp from './ThreeUp'
+
+<Meta title="Layouts / ThreeUp" component={ ThreeUp } />
+
+# ThreeUp
+
+## Add some text here
+
+export const Template = (args) => {
+  return <ThreeUp {...args} />
+}
+
+<Preview withToolbar>
+  <Story name="Primary" args={ {} }>
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props of={ ThreeUp } />

@@ -1,0 +1,9 @@
+.ds-grid {
+  --grid-size: 2;
+  --grid-gap: 10px;
+  grid-template-columns: repeat(
+    var(--grid-size),
+    1fr
+  ); //grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+  gap: var(--grid-gap);
+}

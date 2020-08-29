@@ -1,0 +1,21 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+
+import Alert from './Alert'
+
+<Meta title="Components / Alert" component={ Alert } />
+
+# Alert
+
+## Add some text here
+
+export const Template = (args) => {
+  return <Alert {...args} />
+}
+
+<Preview withToolbar>
+  <Story name="Primary" args={ {} }>
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props of={ Alert } />

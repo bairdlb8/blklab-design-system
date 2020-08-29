@@ -1,0 +1,21 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+
+import Snackbar from './Snackbar'
+
+<Meta title="Components / Snackbar" component={ Snackbar } />
+
+# Snackbar
+
+## Add some text here
+
+export const Template = (args) => {
+  return <Snackbar {...args} />
+}
+
+<Preview withToolbar>
+  <Story name="Primary" args={ {} }>
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props of={ Snackbar } />

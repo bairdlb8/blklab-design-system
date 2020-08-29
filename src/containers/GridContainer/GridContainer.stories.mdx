@@ -1,0 +1,39 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+
+import GridContainer from './GridContainer'
+import Card from '../../components/Card'
+
+<Meta title="Containers / Grid Container" component={GridContainer} />
+
+# Grid Container
+
+export const Template = (args) => {
+  return (
+    <GridContainer {...args}>
+      <Card title="How not to do something" subtitle="10.20.2020">
+        A design approach is a general philosophy that may or may not include a guide for specific
+        methods.
+      </Card>
+      <Card title="How not to do something" subtitle="10.20.2020">
+        Some are to guide the overall goal of the design. Other approaches are to guide the
+        tendencies of the designer.
+      </Card>
+      <Card title="How not to do something" subtitle="10.20.2020">
+        The boundaries between art and design are blurred, largely due to a range of applications
+        both for the term 'art' and the term 'design'.
+      </Card>
+      <Card title="How not to do something" subtitle="10.20.2020">
+        "Process design" (in contrast to "design process" mentioned above) is to the planning of
+        routine steps of a process aside from the expected result.
+      </Card>
+    </GridContainer>
+  )
+}
+
+<Preview>
+  <Story name="Grid" args={{ gridSize: 2, gridGap: 10, className: '' }}>
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props from={GridContainer} />

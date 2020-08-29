@@ -1,0 +1,27 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+
+import FlexContainer from './FlexContainer'
+import Button from '../../basics/Button'
+
+<Meta title="Containers / Flex Container" component={FlexContainer} />
+
+# Flex Container
+
+export const Template = (args) => {
+  return (
+    <FlexContainer {...args}>
+      <Button>Test 1</Button>
+      <Button>Test 2</Button>
+      <Button>Test 3</Button>
+      <Button>Test 4</Button>
+    </FlexContainer>
+  )
+}
+
+<Preview>
+  <Story name="Flex" args={{ gap: 10, className: '', flexWrap: '', flexDir: '' }}>
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props from={FlexContainer} />

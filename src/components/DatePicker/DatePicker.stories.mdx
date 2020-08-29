@@ -1,0 +1,21 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+
+import DatePicker from './DatePicker'
+
+<Meta title="Components / DatePicker" component={ DatePicker } />
+
+# DatePicker
+
+## Add some text here
+
+export const Template = (args) => {
+  return <DatePicker {...args} />
+}
+
+<Preview withToolbar>
+  <Story name="Primary" args={ {} }>
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props of={ DatePicker } />

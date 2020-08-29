@@ -1,0 +1,38 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+
+import Header from './Header'
+
+<Meta title="Features / Header" component={Header} />
+
+# Header
+
+export const Template = (args) => {
+  return <Header {...args}></Header>
+}
+
+<Preview>
+  <Story
+    name="Header"
+    args={{
+      className: '',
+      navItems: [{ title: 'Home' }, { title: 'Products' }, { title: 'About' }]
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Preview>
+  <Story
+    name="Condensed"
+    args={{
+      className: '',
+      navItems: [{ title: 'Home' }, { title: 'Products' }, { title: 'About' }],
+      condensed: true
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props from={Header} />

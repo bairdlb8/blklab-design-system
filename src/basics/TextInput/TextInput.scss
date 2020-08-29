@@ -1,0 +1,26 @@
+.ds-input {
+  label {
+    display: block;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+  .help {
+    font-weight: normal;
+    color: var(--text-color-medium, #999);
+  }
+  input {
+    height: var(--button-height, 45px);
+    padding: 0 var(--spacer-1);
+    border-radius: var(--border-radius);
+    border-color: var(--gray-color-light);
+    border-style: solid;
+    transition: all var(--animation-speed-fast, 0.25s) var(--animation-easing-linear);
+
+    &.has-error {
+      border-color: var(--error-color, #ff0000);
+    }
+  }
+  .error {
+    color: var(--error-color, #ff0000);
+  }
+}

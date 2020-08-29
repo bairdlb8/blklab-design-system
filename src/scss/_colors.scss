@@ -1,0 +1,117 @@
+@media (prefers-color-scheme: dark) {
+}
+
+@supports (--color: red) {
+  // :root {
+  //     --color: red;
+  // }
+  // body {
+  //     color: var(--color)};
+  // }
+}
+
+@function hsb($h-hsb, $s-hsb, $b-hsb, $a: 1) {
+  @if $b-hsb == 0 {
+    @return hsla(0, 0, 0, $a);
+  } @else {
+    $l-hsl: ($b-hsb/2) * (2 - ($s-hsb/100));
+    $s-hsl: ($b-hsb * $s-hsb) / if($l-hsl < 50, $l-hsl * 2, 200 - $l-hsl * 2);
+    @return hsla($h-hsb, $s-hsl, $l-hsl, $a);
+  }
+}
+
+$primary: (
+  h: 218,
+  s: 20,
+  b: 16
+);
+
+$secondary: (
+  h: 131,
+  s: 38,
+  b: 100
+);
+
+$gray: (
+  h: 131,
+  s: 4,
+  b: 50
+);
+
+:root {
+  --body-background-color: #fff;
+
+  --primary-color: #{hsb(map-get($primary, 'h'), map-get($primary, 's'), map-get($primary, 'b'))};
+  --primary-color-light: #{hsb(
+      map-get($primary, 'h'),
+      map-get($primary, 's') - 11,
+      map-get($primary, 'b')
+    )};
+  --primary-color-lighter: #{hsb(
+      map-get($primary, 'h'),
+      map-get($primary, 's') - 25,
+      map-get($primary, 'b')
+    )};
+  --primary-color-dark: #{hsb(
+      map-get($primary, 'h'),
+      map-get($primary, 's'),
+      map-get($primary, 'b') - 15
+    )};
+  --primary-color-darker: #{hsb(
+      map-get($primary, 'h'),
+      map-get($primary, 's'),
+      map-get($primary, 'b') - 55
+    )};
+
+  --secondary-color: #{hsb(
+      map-get($secondary, 'h'),
+      map-get($secondary, 's'),
+      map-get($secondary, 'b')
+    )};
+  --secondary-color-light: #{hsb(
+      map-get($secondary, 'h'),
+      map-get($secondary, 's') - 11,
+      map-get($secondary, 'b')
+    )};
+  --secondary-color-lighter: #{hsb(
+      map-get($secondary, 'h'),
+      map-get($secondary, 's') - 25,
+      map-get($secondary, 'b')
+    )};
+  --secondary-color-dark: #{hsb(
+      map-get($secondary, 'h'),
+      map-get($secondary, 's'),
+      map-get($secondary, 'b') - 15
+    )};
+  --secondary-color-darker: #{hsb(
+      map-get($secondary, 'h'),
+      map-get($secondary, 's'),
+      map-get($secondary, 'b') - 55
+    )};
+
+  --gray-color: #{hsb(map-get($gray, 'h'), map-get($gray, 's'), map-get($gray, 'b'))};
+  --gray-color-light: #{hsb(map-get($gray, 'h'), map-get($gray, 's'), map-get($gray, 'b') + 25)};
+  --gray-color-lighter: #{hsb(map-get($gray, 'h'), map-get($gray, 's'), map-get($gray, 'b') + 45)};
+  --gray-color-dark: #{hsb(map-get($gray, 'h'), map-get($gray, 's'), map-get($gray, 'b') - 25)};
+  --gray-color-darker: #{hsb(map-get($gray, 'h'), map-get($gray, 's'), map-get($gray, 'b') - 75)};
+
+  --text-color-default: #000;
+  --text-color-light: #{hsb(360, 1, 100)};
+  --text-color-dark: #{hsb(0, 0, 0)};
+  --text-color-medium: #{hsb(0, 0, 50)};
+
+  --success-color: #{hsb(0, 0, 0)};
+  --warning-color: #{hsb(0, 0, 0)};
+  --error-color: #{hsb(339, 47, 97)};
+
+  --border-color: #{hsb(0, 0, 0)};
+
+  .light-text {
+    color: var(--text-color-light);
+  }
+}
+
+body.dark {
+  --body-background-color: #000;
+  --text-color-default: #fff;
+}

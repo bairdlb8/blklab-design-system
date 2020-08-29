@@ -1,0 +1,21 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+
+import ColorCard from './ColorCard'
+
+<Meta title="Guide / ColorCard" component={ ColorCard } />
+
+# ColorCard
+
+## Add some text here
+
+export const Template = (args) => {
+  return <ColorCard {...args} />
+}
+
+<Preview withToolbar>
+  <Story name="Primary" args={ {} }>
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props of={ ColorCard } />

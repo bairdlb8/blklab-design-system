@@ -1,0 +1,21 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+
+import FilterList from './FilterList'
+
+<Meta title="Components / FilterList" component={ FilterList } />
+
+# FilterList
+
+## Add some text here
+
+export const Template = (args) => {
+  return <FilterList {...args} />
+}
+
+<Preview withToolbar>
+  <Story name="Primary" args={ {} }>
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props of={ FilterList } />

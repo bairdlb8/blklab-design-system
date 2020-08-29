@@ -1,0 +1,27 @@
+$width-xs: 0;
+$width-sm: 544px;
+$width-md: 768px;
+$width-lg: 1012px;
+$width-xl: 1280px;
+$breakpoints: (
+  sm: $width-sm,
+  md: $width-md,
+  lg: $width-lg,
+  xl: $width-xl
+) !default;
+
+@mixin breakpoint($size) {
+  @media screen and (max-width: map-get($map: $breakpoints, $key: $size)) {
+    @content;
+  }
+}
+
+@mixin min-breakpoint($size) {
+  @media screen and (min-width: map-get($map: $breakpoints, $key: $size)) {
+    @content;
+  }
+}
+
+// @include breakpoint(md) {
+//     //Example medium
+// }

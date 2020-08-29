@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css?family=Inter:400,700,800|Open+Sans:400&display=swap');
+
+:root {
+  --primary-font: 'Open Sans', sans-serif;
+  --header-font: 'Inter', sans-serif;
+}
+
+$type-ratios: (
+  'minorSecond': 1.067,
+  'majorSecond': 1.125,
+  'minorThird': 1.2,
+  'majorThird': 1.25,
+  'perfectFourth': 1.333,
+  'augmentedFourth': 1.414,
+  'perfectFifth': 1.5,
+  'goldenRatio': 1.618
+);
+
+// Recommended starting point
+$type-base-size: 1rem;
+
+// Select by key of map, or use a custom value
+$type-size-ratio: map-get(
+  $map: $type-ratios,
+  $key: 'perfectFourth'
+); //type-ratios('perfectFourth');
+
+// List in descending order to prevent extra sort function
+$type-levels: 4, 3, 2, 1;
+
+body {
+  background-color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  color: #190909;
+  font-size: 1rem;
+  line-height: calc(2px + 3.5ex + 2px);
+}
+
+p,
+li,
+h1,
+h2,
+h3,
+h4 {
+  // Help prevent overflow of long words/names/URLs
+  word-break: break-word;
+
+  // Optional, not supported for all languages
+  hyphens: auto;
+}
+
+// Create map with h[x] as key
+// and computed font-size as value
+$type-styles: ();
+$level-size: $type-base-size;
+@each $level in $type-levels {
+  $level-size: $level-size * $type-size-ratio;
+  $type-styles: map-merge($type-styles, (#{'h'}$level: $level-size));
+
+  // Output heading styles
+  // Assign to element and create utility class
+  h#{$level},
+  .h#{$level} {
+    // Fallback for browsers that don't support min / max
+    font-size: $level-size;
+
+    // Recommendation courtesy of this brilliant work:
+    // @link https://hugogiraudel.com/2020/05/18/using-calc-to-figure-out-optimal-line-height/
+    line-height: calc(2px + 2ex + 2px);
+
+    // Set with `em` to be relative to current `font-size`
+    margin-top: 0;
+    margin-bottom: 0.65em;
+
+    font-family: var(--header-font);
+    font-weight: 700;
+
+    // Limit in place based on testing -> smaller ratios are
+    // prematurely or unnecessarily reduced
+    @if ($type-size-ratio > 1.2) {
+      // Fluid type styles
+
+      // As of May 2020, min / max has better support than clamp
+      // particularly for mobile devices
+
+      // `unquote` is required due to built-in Sass min/max functions
+      // incorrectly assuming intent
+
+      // Remove unit for calculations
+      $level-unitless: $level-size / ($level-size * 0 + 1);
+
+      // Set minimum size to a percentage less than $level-size
+      // Reduction is greater for large font sizes (> 4rem) to help
+      // prevent overflow due to font-size on mobile devices
+      $fluid-reduction: if($level-size > 4, 0.5, 0.33);
+      $fluid-min: $level-unitless - ($fluid-reduction * $level-unitless);
+
+      // Prevent dropping lower than 1rem (body font-size)
+      $fluid-min: if($fluid-min > $type-base-size, $fluid-min, 1);
+
+      // Adjust max modifier slightly per level to prevent "same" size
+      // or lower levels appaering larger than higher levels
+      // 4vw was selected by testing from $type-ratios map, YMMV 🙃
+      $fluid-scaler: ($level-unitless - $fluid-min) + 4vw;
+
+      font-size: unquote('min(max(#{$fluid-min}rem, #{$fluid-scaler}), #{$level-size})');
+    }
+  }
+}
+
+@function type-style($key) {
+  @return map-get($type-styles, $key);
+}
+
+p {
+  //margin-bottom: 1.3em;
+  line-height: calc(2px + 3.5ex + 2px);
+}
+
+* > *:last-of-type(p) {
+  margin-bottom: 0;
+}
+
+// @import url('https://fonts.googleapis.com/css?family=Inter:400|Open+Sans:400');
+
+// :root {
+//     --primary-font: 'Open Sans', sans-serif;
+//     --header-font: 'Inter', sans-serif;
+//     // Heading sizes - mobile
+//     // h4—h6 remain the same size on both mobile & desktop
+//     --h00-size-mobile: 40px;
+//     --h0-size-mobile: 32px;
+//     --h1-size-mobile: 26px;
+//     --h2-size-mobile: 22px;
+//     --h3-size-mobile: 18px;
+//     // Heading sizes - desktop
+//     --h00-size: 4em;
+//     --h0-size: 3em;
+//     --h1-size: 2.5em;
+//     --h2-size: 2em;
+//     --h3-size: 1.75em;
+//     --h4-size: 1.5em;
+//     --body-size: 1em;
+//     --small-size: 0.75em;
+
+//     --font-weight-bold: 600;
+//     --font-weight-default: 500;
+//     --font-weight-light: 300;
+
+//     --lh-condensed-ultra: 1;
+//     --lh-condensed: 1.25;
+//     --lh-default: 1.5;
+// }
+
+// @supports (font-size-adjust: 1) {
+//     :root {
+//         font-size-adjust: 0.5;
+//     }
+// }
+
+// article h1 {
+//     font-size: 2.5em;
+//     line-height: calc(1ex / 0.42);
+//     margin: calc(1ex / 0.42) 0;
+// }
+
+// article h2 {
+//     font-size: 2em;
+//     line-height: calc(1ex / 0.42);
+//     margin: calc(1ex / 0.42) 0;
+// }
+
+// article h3 {
+//     font-size: 1.75em;
+//     line-height: calc(1ex / 0.38);
+//     margin: calc(1ex / 0.38) 0;
+// }
+
+// article h4 {
+//     font-size: 1.5em;
+//     line-height: calc(1ex / 0.37);
+//     margin: calc(1ex / 0.37) 0;
+// }
+
+// article p {
+//     font-size: 1em;
+//     line-height: calc(1ex / 0.32);
+//     margin: calc(1ex / 0.32) 0;
+// }
+
+// html {
+//     font-size: 100%;
+// } /*16px*/
+
+// body {
+//     background-color: white;
+//     font-family: 'Open Sans', sans-serif;
+//     font-weight: 400;
+//     line-height: 1.65;
+//     color: #190909;
+// }
+
+// p {
+//     margin-bottom: 1.15rem;
+// }
+
+// h1,
+// h2,
+// h3,
+// h4,
+// h5 {
+//     margin: 2.75rem 0 1.05rem;
+//     font-family: 'Inter', sans-serif;
+//     font-weight: 400;
+//     line-height: 1.15;
+// }
+
+// h1 {
+//     margin-top: 0;
+//     font-size: 7.594em;
+// }
+
+// h2 {
+//     font-size: 5.063em;
+// }
+
+// h3 {
+//     font-size: 3.375em;
+// }
+
+// h4 {
+//     font-size: 2.25em;
+// }
+
+// h5 {
+//     font-size: 1.5em;
+// }
+
+// small,
+// .text_small {
+//     font-size: 0.667em;
+// }
+
+// p {
+//     width: 60ch;
+//     max-width: 100%;
+// }

@@ -1,0 +1,31 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+import { withKnobs, select, boolean } from '@storybook/addon-knobs'
+import { Compass } from 'react-feather'
+
+import Button from './Button'
+
+<Meta title="Basics / Button" component={Button} />
+
+# Button
+
+## Displays an image that represents a user or organization
+
+Use an avatar for attributing actions or content to specific users. The user’s name should _always_ be present when using Button – either printed beside the avatar or in a tooltip.
+
+export const Template = (args) => {
+  return <Button {...args}>Click Me</Button>
+}
+
+<Preview withToolbar>
+  <Story name="Primary" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props of={Button} />
+
+<Preview withToolbar>
+  <Story name="Secondary" args={{ secondary: true }}>
+    {Template.bind({})}
+  </Story>
+</Preview>

@@ -1,0 +1,100 @@
+@import '_variables.scss';
+
+@mixin fluidFontSize($base-font: 16px, $multiplier: 1vw, $line-height: 1.2rem) {
+  //$font-size: calc(#{$base-font} + #{$multiplier});
+  font-size: $base-font;
+  //@include lineHeight(calc(#{$base-font} + #{$multiplier}), #{$line-height});
+}
+
+@mixin fluidMargin($base-font: 16px, $multiplier: 1.5vw, $line-height: 1.4) {
+  $rem: calc(#{$base-font} + #{$multiplier});
+  margin-bottom: calc((#{$rem} + (#{$rem} * #{$multiplier})));
+}
+
+@mixin lineHeight($font-size, $multiplier: 1.4, $step: 2, $modifier: 1vw) {
+  $line-height: calc((#{$font-size} * #{$multiplier}));
+  line-height: $line-height;
+  //@include lhCrop($font-size, $multiplier, 1);
+  // margin-bottom: calc((#{$font-size} + (#{$step} * #{$multiplier + px})));
+  //line-height: calc((#{$font-size} * #{$multiplier}));
+}
+
+@mixin marginBottom($font-size, $multiplier: 1) {
+  margin-bottom: calc((#{$font-size} * #{$multiplier}));
+}
+
+@mixin marginHeading() {
+  margin-top: calc(1.5 * (1em + 0.5vw));
+  margin-bottom: 0;
+}
+
+@mixin marginBody() {
+  margin: calc(1em + 0.5vw) 0;
+}
+
+@mixin modifiers($map, $attribute, $prefix: '-', $separator: '-', $base: 'base') {
+  @each $key, $value in $map {
+    &#{if($key != $base, #{$prefix}#{$key}, '')} {
+      @if type-of($value) == 'map' {
+        @include modifiers($value, $attribute, $separator);
+      } @else {
+        #{$attribute}: $value;
+      }
+    }
+  }
+}
+
+@mixin columns($attribute, $cols: 12) {
+  @for $i from 1 through $cols {
+    &#{-$i} {
+      #{$attribute}: (100 / ($cols / $i)) * 1%;
+    }
+  }
+}
+
+@mixin makeResponsive {
+  @content;
+
+  @each $key, $value in $breakpoints {
+    @media screen and (max-width: $value) {
+      @content;
+    }
+  }
+}
+
+$base-font-size: 1em;
+$base-line-height: 1.8em;
+$cap-height: 0.66;
+
+@mixin baseline($font-size, $scale: 2) {
+  // rhythm unit
+  $rhythm: $base-line-height * $font-size / $scale;
+  // number of rhythm units that can fit the font-size
+  $lines: ceil(($font-size + 0.001px) / $rhythm);
+  // calculate the new line-height
+  $line-height: ($rhythm * $lines) / $font-size;
+  // use the results
+  font-size: #{$font-size};
+  line-height: #{$line-height + em};
+  $baseline-distance: (($line-height - $cap-height) / 2) + em;
+  padding-top: calc(#{$baseline-distance});
+  margin-bottom: calc((#{$base-line-height} - #{$baseline-distance}));
+}
+
+@mixin lhCrop($font-size, $multiplier: 1.4, $capital-letter: 1) {
+  &::before {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+    margin-top: calc((#{$capital-letter + px} - #{$font-size}) * (#{$font-size} / 2));
+  }
+}
+
+@mixin fillContainer() {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}

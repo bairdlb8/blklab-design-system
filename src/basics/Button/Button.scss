@@ -1,0 +1,123 @@
+.ds-button {
+  background-color: #000;
+  color: #fff;
+  padding: var(--spacer-2) var(--spacer-4);
+  border: solid 1px transparent;
+  box-shadow: var(--shadow);
+  transition: all 0.25s linear;
+  line-height: 1;
+  position: relative;
+
+  .root {
+    width: 100%;
+    display: inline-block;
+  }
+
+  .root > span {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &[ds-icon-side='left'] {
+    .ds-icon {
+      margin-right: 1.25em;
+    }
+  }
+
+  &[ds-icon-side='right'] {
+    .ds-icon {
+      margin-left: 1.25em;
+    }
+  }
+
+  &:disabled {
+    background-color: var(--gray-color-lighter);
+    color: var(--gray-color-dark);
+    cursor: not-allowed;
+  }
+
+  &[ds-primary='true'] {
+    background-color: var(--primary-color);
+    color: var(--button-text-color-light, #fff);
+    &:hover {
+      background-color: var(--primary-color-dark);
+    }
+
+    &:focus {
+    }
+  }
+
+  &[ds-secondary='true'] {
+    background-color: var(--secondary-color);
+    color: var(--primary-color-dark);
+    &:hover {
+      background-color: var(--secondary-color-dark);
+    }
+
+    &:focus {
+    }
+  }
+
+  &.loading {
+  }
+
+  &.destructive {
+    &:hover {
+    }
+
+    &:focus {
+    }
+  }
+
+  &[ds-hollow='true'] {
+    background-color: transparent;
+    color: var(--text-color-default);
+    border-color: var(--text-color-default);
+    &:hover {
+      background-color: var(--primary-color);
+    }
+
+    &:focus {
+    }
+  }
+
+  &.display-block {
+    width: 100%;
+  }
+
+  &.submit {
+  }
+
+  &[ds-size='small'] {
+    font-size: var(--body-size);
+    padding: var(--spacer-2) var(--spacer-3);
+  }
+
+  &[ds-size='medium'] {
+    font-size: var(--body-size);
+    padding: var(--spacer-3) var(--spacer-4);
+    font-size: 1.25em;
+    svg {
+      height: 1.15em;
+      width: 1.15em;
+    }
+  }
+
+  &[ds-size='large'] {
+    font-size: var(--body-size);
+    padding: var(--spacer-3) var(--spacer-5);
+    font-size: 1.35em;
+    svg {
+      height: 1.25em;
+      width: 1.25em;
+    }
+  }
+
+  &.icon {
+    &.left {
+    }
+
+    &.right {
+    }
+  }
+}

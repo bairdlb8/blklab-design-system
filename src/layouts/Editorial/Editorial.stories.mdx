@@ -1,0 +1,21 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+
+import Editorial from './Editorial'
+
+<Meta title="Layouts / Editorial" component={ Editorial } />
+
+# Editorial
+
+## Add some text here
+
+export const Template = (args) => {
+  return <Editorial {...args} />
+}
+
+<Preview withToolbar>
+  <Story name="Primary" args={ {} }>
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props of={ Editorial } />

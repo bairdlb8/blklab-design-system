@@ -1,0 +1,38 @@
+.ds-card {
+  min-height: var(--min-card-height);
+  position: relative;
+
+  .ds-card__text-subtitle {
+    color: var(--gray-color);
+  }
+
+  .ds-card__footer {
+    --card-footer-items: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(var(--card-footer-items), auto);
+  }
+
+  .ds-image {
+    img {
+      height: 30ch;
+    }
+  }
+  img {
+    width: 100%;
+    max-height: 30ch;
+    object-position: center;
+    object-fit: cover;
+  }
+
+  &__text {
+    padding: var(--spacer-6, 16px) var(--spacer-3, 16px);
+  }
+
+  &.shadow {
+    box-shadow: var(--shadow, 0 3px 7px rgba(149, 157, 165, 0.15));
+  }
+}

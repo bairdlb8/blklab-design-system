@@ -1,0 +1,21 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+
+import Loading from './Loading'
+
+<Meta title="Basics / Loading" component={ Loading } />
+
+# Loading
+
+## Add some text here
+
+export const Template = (args) => {
+  return <Loading {...args} />
+}
+
+<Preview withToolbar>
+  <Story name="Primary" args={ {} }>
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props of={ Loading } />

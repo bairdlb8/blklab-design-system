@@ -1,0 +1,13 @@
+.single-with-sidebar {
+  grid-template-columns: auto 350px;
+  gap: 50px;
+
+  article {
+  }
+
+  aside {
+    background-color: var(--primary-color);
+    color: #fff;
+    box-sizing: border-box;
+  }
+}

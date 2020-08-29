@@ -1,0 +1,17 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+
+import Sandbox from './Sandbox'
+
+<Meta title="Templates / Sandbox" component={Sandbox} />
+
+# Sandbox
+
+export const Template = (args) => {
+  return <Sandbox {...args}></Sandbox>
+}
+
+<Preview>
+  <Story name="Sandbox">{Template.bind({})}</Story>
+</Preview>
+
+<Props from={Sandbox} />

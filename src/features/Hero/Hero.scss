@@ -1,0 +1,40 @@
+@import '../../scss/_mixins.scss';
+@import '../../scss/_breakpoints.scss';
+
+.ds-hero {
+  --hero-height: 75ch;
+  --ratio: calc(100vh / 100vw);
+  position: relative;
+  min-height: var(--hero-height);
+
+  @include breakpoint(md) {
+    min-height: 35ch;
+  }
+
+  &.full-screen {
+    --hero-height: 100vh;
+  }
+
+  h1 {
+    text-transform: uppercase;
+  }
+  .ds-image {
+    aspect-ratio: 16 / 9;
+    z-index: 0;
+    @include fillContainer();
+
+    &::after {
+      @include fillContainer();
+      content: '';
+      background-color: rgba(0, 0, 0, 0.5);
+      mix-blend-mode: multiply;
+    }
+  }
+
+  .foreground {
+    z-index: 1;
+    h1 {
+      color: #fff;
+    }
+  }
+}

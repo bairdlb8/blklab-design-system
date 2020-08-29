@@ -1,0 +1,54 @@
+@import '../../scss/_breakpoints.scss';
+
+.ds-header {
+  --nav-item-size: 1;
+  --column-gap: 40px;
+  --header-padding-left: 0;
+  --header-padding-right: 32px;
+  --header-height: 100px;
+
+  @include breakpoint(md) {
+    --header-padding-right: 0;
+  }
+
+  padding: 0 var(--header-padding-right) 0 var(--header-padding-left);
+  grid-template-columns: min-content auto 200px;
+  border-bottom: solid 1px #ccc;
+  min-height: var(--header-height);
+
+  .logo {
+    width: 200px;
+    padding: 30px 0;
+    text-align: center;
+    background-color: #ccc;
+  }
+
+  nav {
+    display: flex;
+    grid-column: 2/3;
+    justify-content: center;
+    ul {
+      grid-template-columns: repeat(var(--nav-item-size), auto);
+      column-gap: var(--column-gap);
+    }
+
+    .hamburger {
+      color: #000;
+      justify-self: end;
+      display: none;
+      @include breakpoint(md) {
+        display: block;
+      }
+    }
+  }
+
+  &.condensed {
+    --header-height: 50px;
+    grid-template-columns: max-content auto max-content;
+    nav {
+      grid-column: 1/2;
+      font-size: 1em;
+      padding-bottom: 10px;
+    }
+  }
+}

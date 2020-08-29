@@ -1,0 +1,21 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+
+import Masthead from './Masthead'
+
+<Meta title="Features / Masthead" component={ Masthead } />
+
+# Masthead
+
+## Add some text here
+
+export const Template = (args) => {
+  return <Masthead {...args} />
+}
+
+<Preview withToolbar>
+  <Story name="Primary" args={ {} }>
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props of={ Masthead } />

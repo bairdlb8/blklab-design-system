@@ -1,0 +1,23 @@
+.ds-data-table {
+  --ds-table-cell-padding: 10px;
+  background-color: turquoise;
+  background-color: var(--data-table-background-color, #fff);
+
+  table {
+    width: 100%;
+    tr {
+      th,
+      td {
+        padding: var(--ds-table-cell-padding);
+      }
+
+      th {
+        background-color: var(--primary-color-dark);
+        color: #fff;
+      }
+
+      td {
+      }
+    }
+  }
+}

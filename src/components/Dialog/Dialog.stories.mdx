@@ -1,0 +1,21 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+
+import Dialog from './Dialog'
+
+<Meta title="Components / Dialog" component={Dialog} />
+
+# Dialog
+
+## Add some text here
+
+export const Template = (args) => {
+  return <Dialog {...args} />
+}
+
+<Preview withToolbar>
+  <Story name="Primary" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props of={Dialog} />

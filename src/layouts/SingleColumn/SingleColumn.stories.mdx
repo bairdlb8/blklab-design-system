@@ -1,0 +1,56 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+
+import SingleColumn from './SingleColumn'
+
+<Meta title="Layouts / SingleColumn" component={SingleColumn} />
+
+# SingleColumn
+
+## Add some text here
+
+export const Template = (args) => {
+  return (
+    <SingleColumn {...args}>
+      <p>
+        The boundaries between art and design are blurred, largely due to a range of applications
+        both for the term 'art' and the term 'design'. Applied arts can include industrial design,
+        graphic design, fashion design, and the decorative arts which traditionally includes craft
+        objects. In graphic arts (2D image making that ranges from photography to illustration), the
+        distinction is often made between fine art and commercial art, based on the context within
+        which the work is produced and how it is traded.
+      </p>
+      <p>
+        To a degree, some methods for creating work, such as employing intuition, are shared across
+        the disciplines within the applied arts and fine art. Mark Getlein, writer, suggests the
+        principles of design are "almost instinctive", "built-in", "natural", and part of "our sense
+        of 'rightness'." However, the intended application and context of the resulting works will
+        vary greatly.
+      </p>
+      <p>
+        This is not to say that production never involves problem-solving or creativity, nor that
+        design always involves creativity. Designs are rarely perfect and are sometimes repetitive.
+        The imperfection of a design may task a production position (e.g. production artist,
+        construction worker) with utilizing creativity or problem-solving skills to compensate for
+        what was overlooked in the design process. Likewise, a design may be a simple repetition
+        (copy) of a known preexisting solution, requiring minimal, if any, creativity or
+        problem-solving skills from the designer.
+      </p>
+      <p>
+        "Process design" (in contrast to "design process" mentioned above) is to the planning of
+        routine steps of a process aside from the expected result. Processes (in general) are
+        treated as a product of design, not the method of design. The term originated with the
+        industrial designing of chemical processes. With the increasing complexities of the
+        information age, consultants and executives have found the term useful to describe the
+        design of business processes as well as manufacturing processes.
+      </p>
+    </SingleColumn>
+  )
+}
+
+<Preview withToolbar>
+  <Story name="Primary" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props of={SingleColumn} />

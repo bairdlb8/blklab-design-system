@@ -1,0 +1,39 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+
+import TwoUp from './TwoUp'
+import Image from '../../basics/Image'
+import Container from '../../containers/Container'
+
+<Meta title="Layouts / Two Up" component={TwoUp} />
+
+# Two Up
+
+export const Template = (args) => {
+  return (
+    <Container>
+      <TwoUp {...args}>
+        <Image />
+        <div className="pl-lg display-flex justify-content-start flex-dir-col">
+          <h1>"Process design"</h1>
+          <p>
+            The rational model is based on a rationalist philosophy According to the rationalist
+            philosophy, design is informed by research and knowledge in a predictable and controlled
+            manner.
+          </p>
+          <p>
+            The action-centric perspective is a label given to a collection of interrelated
+            concepts, which are antithetical to the rational model. It posits that:
+          </p>
+        </div>
+      </TwoUp>
+    </Container>
+  )
+}
+
+<Preview>
+  <Story name="Two Up" args={{ className: '' }}>
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props from={TwoUp} />

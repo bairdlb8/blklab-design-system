@@ -1,0 +1,21 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+
+import Heading from './Heading'
+
+<Meta title="Basics / Heading" component={Heading} />
+
+# Heading
+
+## Add some text here
+
+export const Template = (args) => {
+  return <Heading {...args}>{args.children}</Heading>
+}
+
+<Preview withToolbar>
+  <Story name="Primary" args={{ children: 'This is a test' }}>
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props of={Heading} />

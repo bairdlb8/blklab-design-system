@@ -1,0 +1,21 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+
+import Nav from './Nav'
+
+<Meta title="Features / Nav" component={ Nav } />
+
+# Nav
+
+## Add some text here
+
+export const Template = (args) => {
+  return <Nav {...args} />
+}
+
+<Preview withToolbar>
+  <Story name="Primary" args={ {} }>
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props of={ Nav } />

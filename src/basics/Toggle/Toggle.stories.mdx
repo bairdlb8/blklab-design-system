@@ -1,0 +1,21 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+
+import Toggle from './Toggle'
+
+<Meta title="Basics / Toggle" component={Toggle} />
+
+# Toggle
+
+## Add some text here
+
+export const Template = (args) => {
+  return <Toggle {...args} />
+}
+
+<Preview withToolbar>
+  <Story name="Primary" args={{ label: 'Test', name: 'test', leftLabel: '', rightLabel: '' }}>
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props of={Toggle} />

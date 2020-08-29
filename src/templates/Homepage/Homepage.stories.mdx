@@ -1,0 +1,21 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+
+import Homepage from './Homepage'
+
+<Meta title="Templates / Homepage" component={Homepage} />
+
+# Homepage
+
+## Add some text here
+
+export const Template = (args) => {
+  return <Homepage {...args} />
+}
+
+<Preview withToolbar>
+  <Story name="Primary" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props of={Homepage} />

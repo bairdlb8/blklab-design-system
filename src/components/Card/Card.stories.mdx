@@ -1,0 +1,19 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+
+import Card from './Card'
+
+<Meta title="Components / Card" component={Card} />
+
+# Card
+
+export const Template = (args) => {
+  return <Card {...args} title="How not to do something" subtitle="10.20.2020"></Card>
+}
+
+<Preview>
+  <Story name="Card" args={{ className: '' }}>
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props from={Card} />

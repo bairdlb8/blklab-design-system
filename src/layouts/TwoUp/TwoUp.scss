@@ -1,0 +1,14 @@
+@import '../../scss/_breakpoints.scss';
+
+.ds-two-up {
+  .ds-image,
+  img {
+    height: clamp(400px, 10vh, 50px);
+  }
+
+  @include breakpoint(md) {
+    .ds-grid > *:first-child {
+      margin-bottom: var(--spacer-6);
+    }
+  }
+}

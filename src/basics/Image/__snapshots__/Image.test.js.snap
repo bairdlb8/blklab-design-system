@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image should render 1`] = `
+<DocumentFragment>
+  Image
+</DocumentFragment>
+`;
