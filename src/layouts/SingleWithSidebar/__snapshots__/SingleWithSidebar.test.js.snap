@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SingleWithSidebar /> should take a snapshot 1`] = `
+<DocumentFragment>
+  <section
+    class="single-with-sidebar display-grid"
+  >
+    <article
+      class="pt-lg"
+    />
+    <aside
+      class="p-lg"
+    />
+  </section>
+</DocumentFragment>
+`;

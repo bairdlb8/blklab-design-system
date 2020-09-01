@@ -1,0 +1,21 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+
+import App from './App'
+
+<Meta title="Templates / App" component={App} />
+
+# App
+
+## Add some text here
+
+export const Template = (args) => {
+  return <App {...args} />
+}
+
+<Preview withToolbar>
+  <Story name="App Example" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props of={App} />

@@ -4,9 +4,13 @@ import './Icon.scss'
 
 import 'eva-icons/style/eva-icons.css'
 
-function Icon({ icon = '', size = 'medium', className = '' }) {
+function Icon({ icon = '', size = 'medium', className = '', focusable = null, ariaHidden = null }) {
   return (
-    <span className={`ds-icon eva eva-${icon} ${className} ${size}`}>
+    <span
+      className={`ds-icon eva eva-${icon} ${className} ${size}`}
+      focusable={focusable}
+      aria-hidden={ariaHidden}
+    >
       <span className="sr-only">{icon}</span>
     </span>
   )

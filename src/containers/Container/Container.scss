@@ -1,6 +1,33 @@
 .ds-container {
-  --container-max-width: 1200px;
+  --container-width: 85%;
+  --container-max-width: 1400px;
 
-  width: 95%;
+  width: var(--container-width);
   max-width: var(--container-max-width);
+
+  &.full-height {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &.full-width {
+    --container-width: 100%;
+    --container-max-width: 100%;
+  }
+
+  &.light {
+    background-color: transparent;
+  }
+
+  &.dark {
+    color: var(--ds-color-text-light);
+    background-color: var(--text-color-default);
+  }
+
+  &.accent {
+    background-color: var(--ds-color-primary);
+    background-color: var(--ds-color-text-base);
+  }
 }

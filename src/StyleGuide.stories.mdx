@@ -1,0 +1,61 @@
+import { Meta, Story, Props, Canvas } from '@storybook/addon-docs/blocks'
+
+import Colors from '../design-tokens/Base/color/color.json'
+import Typography from '../design-tokens/Base/typography/typography.json'
+
+import GridContainer from './containers/GridContainer'
+import ColorCard from './guide/ColorCard'
+import Heading from './basics/Heading'
+import Text from './basics/Text'
+import Spacer from './basics/Spacer'
+
+<Meta title="Design System / Style Guide" />
+
+<Heading level={1} className="text-transform-uppercase">
+  Style Guide
+</Heading>
+
+<Spacer className="my-md" />
+
+## Colors
+
+<Spacer className="my-xs" />
+
+<>
+  <GridContainer gridSize={3} gridGap={50}>
+    {Object.entries(Colors.ds.color)
+      .slice(0, 3)
+      .map(([key, val]) => {
+        return <ColorCard hexColor={val.value} name={val.name} usage={val.usage} />
+      })}
+    {Object.entries(Colors.ds.color.gray).map(([key, val]) => {
+      return <ColorCard hexColor={val.value} name={val.name} usage={val.usage} />
+    })}
+  </GridContainer>
+</>
+
+<Spacer />
+
+## Typography
+
+<Spacer className="my-xs" />
+
+<>
+  <Container>
+    <Heading level={1}>Boilerplate Design System</Heading>
+    <Heading level={2}>Boilerplate Design System</Heading>
+    <Heading level={3}>Boilerplate Design System</Heading>
+    <Heading level={4}>Boilerplate Design System</Heading>
+    <Text>Boilerplate Design System</Text>
+    <Spacer className="my-xs" />
+    <Text>
+      <b>Headings:</b> {Typography.ds.typography.header.value}
+      <br />
+      <b>Body:</b> {Typography.ds.typography.body.value}
+      <br />
+      <b>Type Scale:</b> {Typography.ds.typography.scale.value} (
+      {Typography.ds.typography.scale.name})
+      <br />
+    </Text>
+  </Container>
+</>

@@ -1,19 +1,22 @@
 .ds-data-table {
   --ds-table-cell-padding: 10px;
-  background-color: turquoise;
   background-color: var(--data-table-background-color, #fff);
 
   table {
     width: 100%;
     tr {
+      &:nth-child(odd) {
+        background-color: #f9f9f9;
+      }
       th,
       td {
         padding: var(--ds-table-cell-padding);
       }
 
       th {
-        background-color: var(--primary-color-dark);
-        color: #fff;
+        background-color: #fff;
+        color: var(--text-color-default);
+        text-align: left;
       }
 
       td {

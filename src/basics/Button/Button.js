@@ -8,6 +8,8 @@ import PropTypes from 'prop-types'
 import './Button.scss'
 
 import Icon from '../Icon'
+import Link from '../Link'
+import Loading from '../Loading'
 
 const IconSides = {
   left: 'left',
@@ -27,6 +29,7 @@ const Sizes = {
 }
 
 const Button = ({
+  className = '',
   url,
   external,
   icon,
@@ -40,6 +43,9 @@ const Button = ({
   secondary,
   size = 'medium',
   textAlign = 'center',
+  ariaLabel,
+  ariaControls,
+  ariaPressed = false,
   onClick,
   onKeyUp,
   onTouchEnter,
@@ -48,13 +54,20 @@ const Button = ({
   let [state, setState] = useState({
     uiState: 'idle'
   })
-  let theIcon = icon !== 'none' ? <Icon icon={icon} /> : null
-  return (
+  let theIcon =
+    icon !== 'none' ? (
+      <span className="ds-button__icon" role="img" aria-label={icon}>
+        <Icon icon={icon} focusable={false} ariaHidden={true} />
+      </span>
+    ) : null
+
+  const buttonInternals = (
     <button
+      data-testid="button"
       type={submit ? 'submit' : 'button'}
       className={`ds-button text-align-${textAlign} ${
         fullWidth ? 'display-block' : 'display-inline-flex'
-      }`}
+      } ${className}`}
       disabled={disabled}
       ds-hollow={hollow ? 'true' : null}
       ds-primary={!secondary && !destructive && !disabled ? 'true' : null}
@@ -62,13 +75,28 @@ const Button = ({
       ds-icon={icon !== 'none' ? 'true' : null}
       ds-icon-side={icon !== 'none' ? iconSide : null}
       ds-size={size}
+      role="button"
+      aria-label={ariaLabel ? ariaLabel : null}
+      aria-controls={ariaControls ? ariaControls : null}
+      aria-pressed={ariaPressed ? true : false}
+      onClick={onClick ? onClick : null}
+      onKeyUp={onClick ? onClick : onKeyUp ? onKeyUp : null}
     >
-      <span className="root">
+      <span className={`root ${loading ? 'fade-out' : ''}`}>
         {iconSide === 'left' && icon !== 'none' && theIcon}
-        <span>{children}</span>
+        <span className="ds-button__text">{children}</span>
         {iconSide === 'right' && icon !== 'none' && theIcon}
       </span>
+      {loading && <Loading />}
     </button>
+  )
+
+  return url ? (
+    <Link href={url} external={external ? true : null} ariaLabel={ariaLabel}>
+      {buttonInternals}
+    </Link>
+  ) : (
+    buttonInternals
   )
 }
 

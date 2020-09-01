@@ -1,0 +1,9 @@
+.ds-sixty-fourty {
+  --gap: 48px;
+  grid-template-columns: calc(60% - (var(--gap) / 2)) auto;
+  gap: var(--gap);
+
+  &.large-side-right {
+    grid-template-columns: auto calc(60% - (var(--gap) / 2));
+  }
+}

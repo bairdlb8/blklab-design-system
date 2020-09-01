@@ -1,3 +1,14 @@
-.color-card{
+.ds-color-card {
+  --ds-swatch-color: #000;
 
+  background-color: #fff;
+  box-shadow: var(--shadow);
+
+  &__color {
+    background-color: var(--ds-swatch-color);
+    height: 200px;
+  }
+
+  &__description {
+  }
 }

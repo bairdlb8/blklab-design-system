@@ -1,6 +1,9 @@
+@import '../../scss/_mixins';
+
 .ds-card {
   min-height: var(--min-card-height);
   position: relative;
+  border-bottom: solid 5px var(--ds-color-secondary);
 
   .ds-card__text-subtitle {
     color: var(--gray-color);
@@ -26,6 +29,7 @@
     max-height: 30ch;
     object-position: center;
     object-fit: cover;
+    border-bottom: solid 5px var(--ds-color-accent);
   }
 
   &__text {
@@ -34,5 +38,10 @@
 
   &.shadow {
     box-shadow: var(--shadow, 0 3px 7px rgba(149, 157, 165, 0.15));
+  }
+
+  &.accent {
+    background-color: var(--ds-color-accent);
+    @include selectFontColor(var(--ds-color-text-accent-foreground));
   }
 }

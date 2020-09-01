@@ -1,8 +1,36 @@
 @import '_reset';
 @import '_normalize';
 @import '_design-tokens';
+@import '_variables';
 @import '_spacing';
 @import '_colors';
 @import '_typography';
-@import '_variables';
 @import '_utilities';
+@import '_animation';
+
+body {
+  padding: 0 !important;
+  background-color: var(--body-background-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+div {
+  color: var(--text-color-default);
+}
+
+.dark {
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  li,
+  div {
+    color: var(--text-color-light);
+  }
+}

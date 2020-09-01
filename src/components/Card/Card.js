@@ -14,7 +14,8 @@ const Card = ({
   footerActions,
   title,
   subtitle,
-  description
+  description,
+  theme = 'normal'
 }) => {
   let hasFooterActions = footerActions && footerActions.props && footerActions.props.children
   let footerSize = null
@@ -24,10 +25,10 @@ const Card = ({
       : 1
   }
   return (
-    <section className={`ds-card shadow ${className}`}>
+    <section className={`ds-card ${theme} ${className}`}>
       <div className="ds-card__header">{headerActions}</div>
-      <Image alt="" />
-      <div className="ds-card__text mb-xxl">
+      {mainImage && <Image src={mainImage} alt="" />}
+      <div className={`ds-card__text ${footerActions ? 'mb-xxl' : ''}`}>
         <h2 className={`font-weight-black ${subtitle ? 'mb-n' : ''}`}>{title}</h2>
         {subtitle && <h3 className="ds-card__text-subtitle font-weight-normal">{subtitle}</h3>}
         {description && <div>{description}</div>}

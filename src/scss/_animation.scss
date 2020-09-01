@@ -2,6 +2,13 @@
 }
 
 @keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes slideLeft {
@@ -22,34 +29,38 @@
 @keyframes shrink {
 }
 
-.fadeIn {
-    animation-name: fadeIn;
+.fade-in {
+  animation-name: fadeIn;
+  animation-direction: forward;
+  animation-play-state: running;
 }
 
-.fadeOut {
-    animation-name: fadeOut;
+.fade-out {
+  animation-name: fadeOut;
+  animation-direction: normal;
+  animation-play-state: running;
 }
 
 .slideLeft {
-    animation-name: slideLeft;
+  animation-name: slideLeft;
 }
 
 .slideRight {
-    animation-name: slideLeft;
+  animation-name: slideLeft;
 }
 
 .slideUp {
-    animation-name: slideLeft;
+  animation-name: slideLeft;
 }
 
 .slideDown {
-    animation-name: slideLeft;
+  animation-name: slideLeft;
 }
 
 .grow {
-    animation-name: grow;
+  animation-name: grow;
 }
 
 .shrink {
-    animation-name: shrink;
+  animation-name: shrink;
 }

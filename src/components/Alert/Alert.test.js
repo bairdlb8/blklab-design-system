@@ -1,13 +1,12 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
-import { toHaveNoViolations } from 'jest-axe'
+import { axe, toHaveNoViolations } from 'jest-axe'
 import Alert from './Alert'
 
 expect.extend(toHaveNoViolations)
 
 describe('<Alert />', () => {
-
   describe('accessibility', () => {
     it('should not fail any accessibility tests', async () => {
       const { container } = render(<Alert />)
@@ -20,5 +19,4 @@ describe('<Alert />', () => {
 
     expect(asFragment(<Alert />)).toMatchSnapshot()
   })
-
 })

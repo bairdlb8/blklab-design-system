@@ -1,5 +1,17 @@
 @import '_variables.scss';
 
+@mixin selectFontColor($color) {
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  li,
+  div {
+    color: $color;
+  }
+}
+
 @mixin fluidFontSize($base-font: 16px, $multiplier: 1vw, $line-height: 1.2rem) {
   //$font-size: calc(#{$base-font} + #{$multiplier});
   font-size: $base-font;

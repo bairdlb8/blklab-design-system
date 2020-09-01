@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<StyleGuide /> should take a snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    StyleGuide
+  </div>
+</DocumentFragment>
+`;

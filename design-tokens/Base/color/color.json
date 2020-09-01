@@ -1,0 +1,63 @@
+{
+  "ds": {
+    "color": {
+      "primary": {
+        "value": "#F784AD",
+        "name": "Pink",
+        "usage": "var(--ds-color-primary)",
+        "text": {
+          "value": "{ds.color.text.base.value}"
+        }
+      },
+      "secondary": {
+        "value": "#212429",
+        "name": "Charcoal",
+        "usage": "var(--ds-color-secondary)",
+        "text": {
+          "value": "{ds.color.text.white.value}"
+        }
+      },
+      "accent": {
+        "value": "#4263EB",
+        "name": "Blue",
+        "usage": "var(--ds-color-accent)"
+      },
+      "text": {
+        "base": {
+          "value": "#212429"
+        },
+        "mid": {
+          "value": "#495057"
+        },
+        "light": {
+          "value": "#ACB5BD"
+        },
+        "white": {
+          "value": "#fff"
+        },
+        "accent": {
+          "foreground": {
+            "value": "{ds.color.text.white.value}"
+          }
+        }
+      },
+      "gray": {
+        "mid": {
+          "value": "#ACB5BD",
+          "name": "Medium Gray",
+          "usage": "var(--ds-color-gray-mid)"
+        },
+        "light": {
+          "value": "#DDE2E5",
+          "name": "Light Gray",
+          "usage": "var(--ds-color-light-mid)"
+        },
+        "dark": {
+          "value": "#495057",
+          "name": "Dark Gray",
+          "usage": "var(--ds-color-dark-mid)"
+        }
+      }
+    }
+  }
+}

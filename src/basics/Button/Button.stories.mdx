@@ -25,6 +25,12 @@ export const Template = (args) => {
 <Props of={Button} />
 
 <Preview withToolbar>
+  <Story name="Primary Icon" args={{ icon: 'github' }}>
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Preview withToolbar>
   <Story name="Secondary" args={{ secondary: true }}>
     {Template.bind({})}
   </Story>

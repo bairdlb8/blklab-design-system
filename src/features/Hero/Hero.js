@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import './Hero.scss'
 
 import Image from '../../basics/Image'
+import Heading from '../../basics/Heading'
 
 function Hero({
   backgroundImage,
@@ -22,8 +23,12 @@ function Hero({
     >
       {backgroundImage && <Image src={backgroundImage} />}
       <div className="foreground display-flex flex-dir-col justify-content-center align-items-center">
-        {title && <h1 className="text-align-center">{title}</h1>}
-        {content && <div>{content}</div>}
+        {title && (
+          <Heading level={1} className="text-transform-uppercase">
+            {title}
+          </Heading>
+        )}
+        {content && <div className="mb-xl">{content}</div>}
         {children}
       </div>
     </section>

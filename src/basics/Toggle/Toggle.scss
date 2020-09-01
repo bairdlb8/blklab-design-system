@@ -72,17 +72,6 @@
   background-color: #333;
 }
 
-a {
-  display: block;
-  margin: 2em 0;
-  padding: 0.5em;
-  box-sizing: border-box;
-
-  &:focus {
-    outline: 3px solid #000;
-  }
-}
-
 /* support Windows High Contrast Mode. Credit: Adrian Roselli https://twitter.com/aardrian/status/1021372139990134785 */
 @media screen and (-ms-high-contrast: active) {
   .ds-toggle__switcher {

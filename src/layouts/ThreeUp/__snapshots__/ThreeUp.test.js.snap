@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ThreeUp /> should take a snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    ThreeUp
+  </div>
+</DocumentFragment>
+`;

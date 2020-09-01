@@ -1,0 +1,29 @@
+{
+  "ds": {
+    "button": {
+      "padding": {
+        "horizontal": {
+          "value": "16px"
+        }
+      },
+      "color": {
+        "primary": {
+          "foreground": {
+            "value": "{ds.color.text.base.value}"
+          },
+          "background": {
+            "value": "{ds.color.primary.value}"
+          }
+        },
+        "secondary": {
+          "foreground": {
+            "value": "{ds.color.text.white.value}"
+          },
+          "background": {
+            "value": "{ds.color.secondary.value}"
+          }
+        }
+      }
+    }
+  }
+}

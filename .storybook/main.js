@@ -9,7 +9,8 @@ module.exports = {
     '../src/features/**/*.stories.(js|mdx)',
     '../src/layouts/**/*.stories.(js|mdx)',
     '../src/containers/**/*.stories.(js|mdx)',
-    '../src/templates/**/*.stories.(js|mdx)'
+    '../src/templates/**/*.stories.(js|mdx)',
+    '../src/*.stories.(js|mdx)'
   ],
   addons: [
     // '@storybook/addon-knobs/register',
@@ -25,11 +26,18 @@ module.exports = {
     '@storybook/addon-a11y'
   ],
   webpackFinal: async (config, { configType }) => {
-    config.module.rules.push({
-      test: /\.scss$/,
-      use: ['style-loader', 'css-loader', 'sass-loader'],
-      include: path.resolve(__dirname, '../src')
-    })
+    config.module.rules.push(
+      {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+        include: path.resolve(__dirname, '../src')
+      },
+      {
+        test: /\.json$/,
+        use: ['json-loader'],
+        include: path.resolve(__dirname, '../src')
+      }
+    )
 
     return config
   }

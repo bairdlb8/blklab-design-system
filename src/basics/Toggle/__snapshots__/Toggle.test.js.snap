@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Toggle /> should take a snapshot 1`] = `
+<DocumentFragment>
+  <fieldset
+    aria-label=""
+  >
+    <legend />
+    <div
+      class="ds-toggle"
+      role="radiogroup"
+    >
+      <label
+        class="sr-only"
+        for="left"
+      />
+      <span
+        class="ds-toggle__wrapper"
+      >
+        <input
+          aria-label=""
+          id="left"
+          name=""
+          type="radio"
+        />
+        <input
+          aria-label=""
+          id="right"
+          name=""
+          type="radio"
+        />
+        <span
+          aria-hidden="true"
+          class="ds-toggle__background"
+        />
+        <span
+          aria-hidden="true"
+          class="ds-toggle__switcher"
+        />
+      </span>
+      <label
+        class="sr-only"
+        for="right"
+      />
+    </div>
+  </fieldset>
+</DocumentFragment>
+`;

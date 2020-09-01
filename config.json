@@ -8,6 +8,10 @@
         {
           "destination": "_design-tokens.scss",
           "format": "css/variables"
+        },
+        {
+          "destination": "_fallback-tokens.scss",
+          "format": "scss/variables"
         }
       ]
     }

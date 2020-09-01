@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Inter:400,700,800|Open+Sans:400&display=swap');
+@import 'fallback-tokens';
+@import url('#{$ds-typography-import}');
 
 :root {
-  --primary-font: 'Open Sans', sans-serif;
-  --header-font: 'Inter', sans-serif;
+  --primary-font: var(--ds-typography-body), sans-serif;
+  --header-font: var(--ds-typography-header), sans-serif;
 }
 
 $type-ratios: (
@@ -20,17 +21,19 @@ $type-ratios: (
 $type-base-size: 1rem;
 
 // Select by key of map, or use a custom value
-$type-size-ratio: map-get(
+$type-size-ratio: $ds-typography-scale; //type-ratios(#{$ds-typography-scale});
+
+/*map-get(
   $map: $type-ratios,
-  $key: 'perfectFourth'
-); //type-ratios('perfectFourth');
+  $key: $k
+);*/ //type-ratios('perfectFourth');
 
 // List in descending order to prevent extra sort function
 $type-levels: 4, 3, 2, 1;
 
 body {
   background-color: white;
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--primary-font);
   font-weight: 400;
   color: #190909;
   font-size: 1rem;
@@ -114,6 +117,7 @@ $level-size: $type-base-size;
 }
 
 p {
+  font-family: var(--primary-font);
   //margin-bottom: 1.3em;
   line-height: calc(2px + 3.5ex + 2px);
 }

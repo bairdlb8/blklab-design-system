@@ -1,8 +1,9 @@
 //Icons
 
-import 'node_modules/eva-icons/style/eva-icons.css'
+import * as Icons from 'node_modules/eva-icons/style/eva-icons.css'
+
+export { Icons }
 
 //Basics
 
-const { Button } = './basics/Button'
-export { Button }
+export * from './basics/Button'

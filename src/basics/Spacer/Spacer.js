@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 
 import './Spacer.scss'
 
-const Spacer = ({className=''}) => {
-  return <div>Spacer</div>
+const Spacer = ({ className = '' }) => {
+  return <div className={`display-flow-root ${!className ? 'my-xxl' : className}`}></div>
 }
 
 Spacer.propTypes = {}

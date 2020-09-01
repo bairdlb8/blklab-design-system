@@ -1,5 +1,4 @@
-@media (prefers-color-scheme: dark) {
-}
+@import 'fallback-tokens';
 
 @supports (--color: red) {
   // :root {
@@ -39,55 +38,19 @@ $gray: (
 );
 
 :root {
-  --body-background-color: #fff;
+  --body-background-color: #f8f9fa;
 
-  --primary-color: #{hsb(map-get($primary, 'h'), map-get($primary, 's'), map-get($primary, 'b'))};
-  --primary-color-light: #{hsb(
-      map-get($primary, 'h'),
-      map-get($primary, 's') - 11,
-      map-get($primary, 'b')
-    )};
-  --primary-color-lighter: #{hsb(
-      map-get($primary, 'h'),
-      map-get($primary, 's') - 25,
-      map-get($primary, 'b')
-    )};
-  --primary-color-dark: #{hsb(
-      map-get($primary, 'h'),
-      map-get($primary, 's'),
-      map-get($primary, 'b') - 15
-    )};
-  --primary-color-darker: #{hsb(
-      map-get($primary, 'h'),
-      map-get($primary, 's'),
-      map-get($primary, 'b') - 55
-    )};
+  --primary-color: #{$ds-color-primary};
+  --primary-color-light: #{lighten($ds-color-primary, 5%)};
+  --primary-color-lighter: #{lighten($ds-color-primary, 25%)};
+  --primary-color-dark: #{darken($ds-color-primary, 5%)};
+  --primary-color-darker: #{darken($ds-color-primary, 25%)};
 
-  --secondary-color: #{hsb(
-      map-get($secondary, 'h'),
-      map-get($secondary, 's'),
-      map-get($secondary, 'b')
-    )};
-  --secondary-color-light: #{hsb(
-      map-get($secondary, 'h'),
-      map-get($secondary, 's') - 11,
-      map-get($secondary, 'b')
-    )};
-  --secondary-color-lighter: #{hsb(
-      map-get($secondary, 'h'),
-      map-get($secondary, 's') - 25,
-      map-get($secondary, 'b')
-    )};
-  --secondary-color-dark: #{hsb(
-      map-get($secondary, 'h'),
-      map-get($secondary, 's'),
-      map-get($secondary, 'b') - 15
-    )};
-  --secondary-color-darker: #{hsb(
-      map-get($secondary, 'h'),
-      map-get($secondary, 's'),
-      map-get($secondary, 'b') - 55
-    )};
+  --secondary-color: #{$ds-color-secondary};
+  --secondary-color-light: #{lighten($ds-color-secondary, 5%)};
+  --secondary-color-lighter: #{lighten($ds-color-secondary, 25%)};
+  --secondary-color-dark: #{darken($ds-color-secondary, 5%)};
+  --secondary-color-darker: #{darken($ds-color-secondary, 25%)};
 
   --gray-color: #{hsb(map-get($gray, 'h'), map-get($gray, 's'), map-get($gray, 'b'))};
   --gray-color-light: #{hsb(map-get($gray, 'h'), map-get($gray, 's'), map-get($gray, 'b') + 25)};
@@ -95,10 +58,10 @@ $gray: (
   --gray-color-dark: #{hsb(map-get($gray, 'h'), map-get($gray, 's'), map-get($gray, 'b') - 25)};
   --gray-color-darker: #{hsb(map-get($gray, 'h'), map-get($gray, 's'), map-get($gray, 'b') - 75)};
 
-  --text-color-default: #000;
-  --text-color-light: #{hsb(360, 1, 100)};
-  --text-color-dark: #{hsb(0, 0, 0)};
-  --text-color-medium: #{hsb(0, 0, 50)};
+  --text-color-default: #{$ds-color-text-base};
+  --text-color-light: #{$ds-color-text-light};
+  --text-color-dark: #{$ds-color-text-base};
+  --text-color-medium: #{$ds-color-text-mid};
 
   --success-color: #{hsb(0, 0, 0)};
   --warning-color: #{hsb(0, 0, 0)};
@@ -111,7 +74,9 @@ $gray: (
   }
 }
 
+//@media (prefers-color-scheme: dark) {
 body.dark {
   --body-background-color: #000;
   --text-color-default: #fff;
 }
+//}
