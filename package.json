@@ -1,23 +1,34 @@
 {
   "name": "blklab-design-system",
-  "version": "1.0.0",
+  "version": "0.1.0",
+  "main": "dist/index.js",
   "author": "Baird Lackner-Buckingham",
   "license": "MIT",
-  "private": true,
-  "main": "dist/index.js",
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "sb:start": "start-storybook",
-    "build": "babel src -d dist --extensions \".js,.jsx,.ts,.tsx\" --ignore \"**/*.test.js\" --ignore \"**/*.stories.js\"",
+    "build": "cross-env BABEL_ENV=production babel src -d dist",
+    "build:webpack": "NODE_ENV=production webpack --mode production",
     "build-storybook-docs": "build-storybook -s public --docs",
     "test": "jest --passWithNoTests --onlyChanged",
     "cypress:open": "cypress open",
     "generate": "plop",
     "compile:tokens": "style-dictionary build"
   },
+  "dependencies": {
+    "eva-icons": "^1.1.3",
+    "framer-motion": "^2.6.5",
+    "prop-types": "^15.7.2",
+    "react-feather": "^2.0.8",
+    "react-hook-form": "^6.6.0"
+  },
   "devDependencies": {
+    "babel-preset-react-app": "^9.1.2",
+    "@testing-library/user-event": "^12.1.3",
+    "jest-axe": "^3.5.0",
+    "style-dictionary": "^2.10.1",
+    "anysort": "^2.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.11.1",
     "@babel/preset-env": "^7.11.0",
@@ -66,20 +77,6 @@
       "prettier --write"
     ]
   },
-  "dependencies": {
-    "@testing-library/user-event": "^12.1.3",
-    "anysort": "^2.0.0",
-    "babel-preset-react-app": "^9.1.2",
-    "eva-icons": "^1.1.3",
-    "framer-motion": "^2.6.5",
-    "jest-axe": "^3.5.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-feather": "^2.0.8",
-    "react-hook-form": "^6.6.0",
-    "style-dictionary": "^2.10.1"
-  },
   "babel": {
     "presets": [
       "react-app"
@@ -92,10 +89,10 @@
   },
   "peerDependencies": {
     "@storybook/react": ">=6.0.21",
-    "react": ">=16.9.0",
-    "react-dom": ">=16.9.0",
-    "styles-components": ">=4.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "framer-motion": "^2.6.5",
-    "react-hook-form": "^6.6.0"
+    "react-hook-form": "^6.6.0",
+    "eva-icons": "^1.1.3"
   }
 }

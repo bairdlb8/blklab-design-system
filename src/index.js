@@ -1,9 +1,15 @@
+//Styles
+import * as styles from './scss/base.scss'
+
+export { styles }
+
 //Icons
 
-import * as Icons from 'node_modules/eva-icons/style/eva-icons.css'
+import * as Icons from 'eva-icons/style/eva-icons.css'
 
 export { Icons }
 
 //Basics
 
-export * from './basics/Button'
+import Button from './basics/Button/Button'
+export { Button }
