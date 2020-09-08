@@ -2,11 +2,15 @@ import React from 'react'
 import './Checkbox.scss'
 //Needs to support spacebar selection
 
-function Checkbox({ label = '', checked = false }) {
+function Checkbox({ label = '', checked = false, onChange = null }) {
   return (
     <>
       <label className="ds-checkbox">
-        <input type="checkbox" checked={checked ? true : null} />
+        <input
+          type="checkbox"
+          checked={checked ? true : null}
+          onChange={onChange ? onChange : null}
+        />
         <svg width="32" height="32" viewBox="-4 -4 39 39" aria-hidden="true" focusable="false">
           <rect
             className="cb-bg"

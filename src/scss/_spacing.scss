@@ -1,20 +1,26 @@
+@import 'fallback-tokens';
 :root {
-  --spacer: 8px;
-  --spacer-0: 0;
-  --spacer-1: 8px;
-  --spacer-2: 16px;
-  --spacer-1-5: 12px;
-  --spacer-3: 24px;
-  --spacer-4: 32px;
-  --spacer-5: 40px;
-  --spacer-6: 48px;
-  --spacer-7: 56px;
-  --spacer-8: 64px;
-  --spacer-12: 96px;
-  --spacer-20: 160px;
 
-  --container-width: 1200px;
-  --container-width-mobile: 95%;
+  @for $i from 0 through $ds-spacing-steps {
+      --spacer-#{$i}: #{$ds-spacing-base * $i}px;
+  }
 
-  --grid-gap: 10px;
+  // --spacer: 8px;
+  // --spacer-0: 0;
+  // --spacer-1: 8px;
+  // --spacer-1-5: 12px;
+  // --spacer-2: 16px;
+  // --spacer-3: 24px;
+  // --spacer-4: 32px;
+  // --spacer-5: 40px;
+  // --spacer-6: 48px;
+  // --spacer-7: 56px;
+  // --spacer-8: 64px;
+  // --spacer-12: 96px;
+  // --spacer-20: 160px;
+
+  --container-width: $ds-spacing-container-max-width;
+  --container-width-mobile: $ds-spacing-container-mobile-max-width;
+
+  --grid-gap: $ds-spacing-grid-gap;
 }

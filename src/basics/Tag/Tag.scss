@@ -3,8 +3,8 @@
 div.ds-tag {
   display: inline-flex;
   padding: var(--spacing-1, 2px) var(--spacing-4, 1em);
-  background-color: var(--gray-color-light);
-  color: var(--gray-color-darker);
+  background-color: var(--accent-color-lighter);
+  color: var(--accent-color-darker);
   border-radius: 5px;
 
   @include selectFontColor(var(--text-color-default));

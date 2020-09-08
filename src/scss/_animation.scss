@@ -1,4 +1,11 @@
 @keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeOut {
@@ -33,12 +40,14 @@
   animation-name: fadeIn;
   animation-direction: forward;
   animation-play-state: running;
+  //opacity: 0;
 }
 
 .fade-out {
   animation-name: fadeOut;
   animation-direction: normal;
   animation-play-state: running;
+  opacity: 1;
 }
 
 .slideLeft {

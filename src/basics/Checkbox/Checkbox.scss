@@ -4,82 +4,90 @@
   display: flex;
   align-items: start;
 
-  --checked-state-bg-color: var(--secondary-color-light);
-  --checked-state-check-color: var(--secondary-color-darker);
+  --checked-state-bg-color: var(--accent-color-lighter);
+  --checked-state-check-color: var(--accent-color-darker);
   --outline-color: var(--checked-state-bg-color);
   --outline-offset: 2px;
   font-size: 24px;
+
   span {
     color: #000;
     vertical-align: middle;
     line-height: 1;
   }
-}
 
-// hide the checkbox accessibly
-.ds-checkbox input[type='checkbox'] {
-  /* remove the checkbox from the page flow, positioning it on top of the SVG */
-  position: absolute;
-  /* set same dimensions as the SVG */
-  width: 1em;
-  height: 1em;
-  /* hide it */
-  opacity: 0;
-}
-
-// basic styles for the svg
-.ds-checkbox svg {
-  /* set SVG dimensions in ems; i.e. relative to the font size so that it scales with the size of the font. */
-  width: 1em;
-  height: 1em;
-
-  margin-right: 0.5em;
-
-  /* apply a transition to the elements inside the svg */
-  * {
-    transition: all 0.1s linear;
-  }
-  vertical-align: middle;
-}
-
-// style changes inside the svg when the checkbox is checked
-.ds-checkbox input[type='checkbox']:checked + svg {
-  .cb-bg {
-    fill: var(--checked-state-bg-color);
-    stroke: var(--checked-state-bg-color);
+  input[type='checkbox'] {
+    /* remove the checkbox from the page flow, positioning it on top of the SVG */
+    position: absolute;
+    /* set same dimensions as the SVG */
+    width: 1em;
+    height: 1em;
+    /* hide it */
+    opacity: 0;
+    cursor: pointer;
   }
 
-  .cb-cm {
-    stroke: var(--checked-state-check-color);
+  // basic styles for the svg
+  svg {
+    /* set SVG dimensions in ems; i.e. relative to the font size so that it scales with the size of the font. */
+    width: 1em;
+    height: 1em;
+
+    margin-right: 0.5em;
+
+    /* apply a transition to the elements inside the svg */
+    * {
+      transition: all 0.2s linear;
+    }
+    vertical-align: middle;
   }
-}
 
-.ds-checkbox input[type='checkbox']:focus + svg {
-  outline: 3px solid var(--outline-color);
-  outline-offset: var(--outline-offset);
-}
+  input[type='checkbox']:hover + svg {
+    cursor: pointer;
+    .cb-bg {
+      stroke: var(--checked-state-bg-color);
+    }
+  }
 
-.ds-checkbox input[type='checkbox']:focus:not(:focus-visible) + svg {
-  outline: none;
-}
+  // style changes inside the svg when the checkbox is checked
+  input[type='checkbox']:checked + svg {
+    .cb-bg {
+      fill: var(--checked-state-bg-color);
+      stroke: var(--checked-state-bg-color);
+    }
 
-/* WHCM styles */
-.ds-checkbox svg {
+    .cb-cm {
+      stroke: var(--checked-state-check-color);
+    }
+  }
+
+  input[type='checkbox']:focus + svg {
+    outline: 3px solid var(--outline-color);
+    outline-offset: var(--outline-offset);
+  }
+
+  input[type='checkbox']:focus:not(:focus-visible) + svg {
+    outline: none;
+  }
+
+  /* WHCM styles */
+  svg {
+    @media screen and (-ms-high-contrast: active) {
+      rect {
+        stroke: windowText;
+      }
+    }
+  }
+
   @media screen and (-ms-high-contrast: active) {
-    rect {
-      stroke: windowText;
-    }
-  }
-}
+    input[type='checkbox']:checked ~ svg {
+      rect {
+        fill: windowText;
+      }
 
-@media screen and (-ms-high-contrast: active) {
-  .ds-checkbox input[type='checkbox']:checked ~ svg {
-    rect {
-      fill: windowText;
-    }
-
-    polyline {
-      stroke: highlight;
+      polyline {
+        stroke: highlight;
+      }
     }
   }
 }

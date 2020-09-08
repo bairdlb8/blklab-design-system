@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import './TextInput.scss'
+import Icon from '../Icon'
 
 function TextInput({
   label,
@@ -12,20 +13,33 @@ function TextInput({
   name,
   helpText,
   disabled,
-  placeholder
+  placeholder,
+  fullWidth = false,
+  onChange = null,
+  icon,
+  iconSide = 'left'
 }) {
   return (
     <div className="ds-input">
       <label>{label}</label>
       {helpText && <div className="help">{helpText}</div>}
-      <input
-        name={name}
-        type={type}
-        disabled={disabled}
-        placeholder={placeholder}
-        className={`display-block ${error ? 'has-error' : null}`}
-        disabled={disabled ? true : null}
-      />
+      <div
+        className={`ds-input__input ${error ? 'has-error' : null} ${
+          fullWidth ? 'full-width' : null
+        }`}
+      >
+        {icon && iconSide === 'left' && <Icon icon={icon} size="large" />}
+        <input
+          name={name}
+          type={type}
+          disabled={disabled}
+          placeholder={placeholder}
+          className={`display-block`}
+          disabled={disabled ? true : null}
+          onChange={onChange}
+        />
+        {icon && iconSide === 'right' && <Icon icon={icon} />}
+      </div>
       <div className="error">{error ? errorMessage : ''}</div>
     </div>
   )

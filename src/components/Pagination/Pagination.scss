@@ -1,0 +1,11 @@
+.ds-pagination {
+  span {
+    transition: all 0.25s linear;
+    cursor: pointer;
+
+    &:hover,
+    &.active {
+      background-color: var(--primary-color);
+    }
+  }
+}

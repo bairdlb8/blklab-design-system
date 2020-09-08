@@ -1,0 +1,57 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+
+import Colors from '../design-tokens/Base/color/color.json'
+import Typography from '../design-tokens/Base/typography/typography.json'
+
+import GridContainer from './containers/GridContainer'
+import Container from './containers/Container'
+import ColorCard from './guide/ColorCard'
+import Heading from './basics/Heading'
+import Text from './basics/Text'
+import Spacer from './basics/Spacer'
+
+<Meta title="Design System / Guidelines" />
+
+<Heading level={1} className="text-transform-uppercase">
+  Guidelines
+</Heading>
+
+<Preview>
+  <Story name="Grid">
+    <Container className="py-xxl">
+      <Heading>Grid</Heading>
+    </Container>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Spacing">
+    <Container className="py-xxl">
+      <Heading>Spacing</Heading>
+    </Container>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Typography">
+    <Container className="py-xxl">
+      <Heading>Typography</Heading>
+    </Container>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Accessibility">
+    <Container className="py-xxl">
+      <Heading>Accessibility</Heading>
+    </Container>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Color">
+    <Container className="py-xxl">
+      <Heading>Color</Heading>
+    </Container>
+  </Story>
+</Preview>

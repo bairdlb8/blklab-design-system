@@ -47,7 +47,7 @@ function Sandbox({}) {
       <Hero
         title="Viral small batch snackwave"
         backgroundImage="https://picsum.photos/2000/1200/?blur"
-        className="mt-xl"
+        className="mt-xl fade-in"
         fullScreen={false}
         content={
           <p>
@@ -62,7 +62,7 @@ function Sandbox({}) {
         </Button>
       </Hero>
 
-      <Spacer />
+      <Spacer size={20} />
 
       <Container>
         <TwoUp className="mt-xl">
@@ -84,7 +84,7 @@ function Sandbox({}) {
           <Image src="https://picsum.photos/seed/picsum/1200/600" />
         </TwoUp>
 
-        <Spacer />
+        <Spacer size={20} />
 
         <SixtyFourty largeSide="left">
           <Image src="https://picsum.photos/seed/picsum/1200/600" />
@@ -107,7 +107,7 @@ function Sandbox({}) {
         </SixtyFourty>
       </Container>
 
-      <Spacer />
+      <Spacer size={20} />
 
       <Container>
         <SingleWithSidebar
@@ -163,7 +163,7 @@ function Sandbox({}) {
         </SingleWithSidebar>
       </Container>
 
-      <Spacer />
+      <Spacer size={20} />
 
       <Container className="p-xxxl" fullWidth={true} color="dark" fullHeight={true}>
         <Heading>Stumptown shaman</Heading>
@@ -188,7 +188,7 @@ function Sandbox({}) {
         </SixtyFourty>
       </Container>
 
-      <Spacer />
+      <Spacer size={20} />
 
       <Container>
         <Heading>Cards</Heading>
@@ -228,7 +228,7 @@ function Sandbox({}) {
         </GridContainer>
       </Container>
 
-      <Spacer />
+      <Spacer size={20} />
 
       <Container>
         <Heading>Brands</Heading>
@@ -250,7 +250,7 @@ function Sandbox({}) {
         </GridContainer>
       </Container>
 
-      <Spacer />
+      <Spacer size={20} />
 
       <Footer />
     </Layout>

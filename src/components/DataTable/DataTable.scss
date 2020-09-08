@@ -1,25 +1,54 @@
 .ds-data-table {
-  --ds-table-cell-padding: 10px;
+  --ds-table-cell-padding: var(--spacer-2);
   background-color: var(--data-table-background-color, #fff);
+
+  .ds_sort__icons {
+    display: inline-block;
+    line-height: 1;
+    vertical-align: middle;
+    .ds-icon {
+      &:first-child {
+        margin-bottom: -4px;
+      }
+      &:hover,
+      &.active {
+        color: var(--accent-color);
+      }
+      display: block;
+      width: 20px;
+    }
+  }
 
   table {
     width: 100%;
+    border: 0;
+    border-collapse: collapse;
     tr {
+      transition: all 0.25s linear;
+      border: 0;
+      border-bottom: 1px solid #f0f0f0;
       &:nth-child(odd) {
-        background-color: #f9f9f9;
+        //background-color: #fafafa;
+      }
+      &:hover {
+        background-color: var(--accent-color-lightest);
       }
       th,
       td {
-        padding: var(--ds-table-cell-padding);
+        padding: var(--ds-table-cell-padding, var(--spacer-2));
       }
 
-      th {
-        background-color: #fff;
-        color: var(--text-color-default);
+      th,
+      tfoot {
+        background-color: #fafafa;
+        color: rgba(0, 0, 0, 0.85);
         text-align: left;
       }
 
       td {
+      }
+
+      tfoot {
       }
     }
   }

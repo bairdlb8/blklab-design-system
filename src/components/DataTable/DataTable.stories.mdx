@@ -15,10 +15,10 @@ export const Template = (args) => {
     name="DataTable"
     args={{
       className: '',
-      headers: [
-        { key: 'title', title: 'Title' },
-        { key: 'something', title: 'Something Else' }
-      ],
+      headers: {
+        title: { title: 'Title', sortDirections: ['ascending', 'descending'] },
+        something: { title: 'Something' }
+      },
       data: [
         { title: 'Home', something: 'Testing' },
         { title: 'Products', something: 'Testing' },

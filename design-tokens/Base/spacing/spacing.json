@@ -1,23 +1,22 @@
 {
-  "spacing": {
-    "size": {
-      "xxs": {
-        "value": "4px"
+  "ds": {
+    "spacing": {
+      "steps": {
+        "value": 20
       },
-      "xs": {
-        "value": "8px"
+      "base": {
+        "value": 8
       },
-      "sm": {
-        "value": "16px"
+      "container": {
+        "max-width": {
+          "value":  "1200px"
+        },
+        "mobile-max-width": {
+          "value": "95%"
+        }
       },
-      "md": {
-        "value": "24px"
-      },
-      "lg": {
-        "value": "48px"
-      },
-      "xl": {
-        "value": "96px"
+      "grid-gap": {
+        "value": "12px"
       }
     }
   }

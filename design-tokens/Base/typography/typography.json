@@ -2,10 +2,10 @@
   "ds": {
     "typography": {
       "header": {
-        "value": "Oswald"
+        "value": "Raleway"
       },
       "body": {
-        "value": "Rubik"
+        "value": "Public Sans"
       },
       "scale": {
         "key": "perfectFourth",
@@ -13,7 +13,7 @@
         "value": 1.333
       },
       "import": {
-        "value": "'https://fonts.googleapis.com/css?family=Oswald|Rubik&display=swap'"
+        "value": "'https://fonts.googleapis.com/css?family=Raleway:wght@700|Public+Sans:wght@400,700&display=swap'"
       }
     }
   }

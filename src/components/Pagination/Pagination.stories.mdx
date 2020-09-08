@@ -1,21 +1,21 @@
 import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
 
-import Tag from './Tag'
+import Pagination from './Pagination'
 
-<Meta title="Basics / Tag" component={Tag} />
+<Meta title="Components / Pagination" component={Pagination} />
 
-# Tag
+# Pagination
 
 ## Add some text here
 
 export const Template = (args) => {
-  return <Tag {...args}>Test</Tag>
+  return <Pagination {...args} />
 }
 
 <Preview withToolbar>
-  <Story name="Primary" args={{}}>
+  <Story name="Default" args={{}}>
     {Template.bind({})}
   </Story>
 </Preview>
 
-<Props of={Tag} />
+<Props of={Pagination} />

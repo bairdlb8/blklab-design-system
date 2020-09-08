@@ -1,6 +1,6 @@
 
 // Do not edit directly
-// Generated on Tue, 01 Sep 2020 03:18:12 GMT
+// Generated on Tue, 08 Sep 2020 03:54:39 GMT
 
 $animation-easing-opacity: linear;
 $animation-easing-color: linear;
@@ -46,18 +46,17 @@ $ds-color-text-accent-foreground: #fff;
 $ds-color-gray-mid: #ACB5BD;
 $ds-color-gray-light: #DDE2E5;
 $ds-color-gray-dark: #495057;
-$ds-typography-header: Oswald;
-$ds-typography-body: Rubik;
+$ds-spacing-steps: 20;
+$ds-spacing-base: 8;
+$ds-spacing-container-max-width: 1200px;
+$ds-spacing-container-mobile-max-width: 95%;
+$ds-spacing-grid-gap: 12px;
+$ds-typography-header: Raleway;
+$ds-typography-body: Public Sans;
 $ds-typography-scale: 1.333;
-$ds-typography-import: 'https://fonts.googleapis.com/css?family=Oswald|Rubik&display=swap';
+$ds-typography-import: 'https://fonts.googleapis.com/css?family=Raleway:wght@700|Public+Sans:wght@400,700&display=swap';
 $ds-button-padding-horizontal: 16px;
 $ds-button-color-primary-foreground: #212429;
 $ds-button-color-primary-background: #F784AD;
 $ds-button-color-secondary-foreground: #fff;
 $ds-button-color-secondary-background: #212429;
-$spacing-size-xxs: 4px;
-$spacing-size-xs: 8px;
-$spacing-size-sm: 16px;
-$spacing-size-md: 24px;
-$spacing-size-lg: 48px;
-$spacing-size-xl: 96px;

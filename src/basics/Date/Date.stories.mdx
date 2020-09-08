@@ -1,21 +1,21 @@
 import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
 
-import Tag from './Tag'
+import Date from './Date'
 
-<Meta title="Basics / Tag" component={Tag} />
+<Meta title="Basics / Date" component={Date} />
 
-# Tag
+# Date
 
 ## Add some text here
 
 export const Template = (args) => {
-  return <Tag {...args}>Test</Tag>
+  return <Date {...args} />
 }
 
 <Preview withToolbar>
-  <Story name="Primary" args={{}}>
+  <Story name="Default" args={{}}>
     {Template.bind({})}
   </Story>
 </Preview>
 
-<Props of={Tag} />
+<Props of={Date} />

@@ -1,3 +1,5 @@
-.divider{
-
+.ds-divider {
+  --divider-thickness: 1px;
+  height: var(--divider-thickness);
+  background-color: var(--ds-color-gray-light);
 }

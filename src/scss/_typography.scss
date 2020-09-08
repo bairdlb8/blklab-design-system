@@ -1,4 +1,5 @@
 @import 'fallback-tokens';
+@import '_mixins';
 @import url('#{$ds-typography-import}');
 
 :root {
@@ -45,7 +46,8 @@ li,
 h1,
 h2,
 h3,
-h4 {
+h4,
+td {
   // Help prevent overflow of long words/names/URLs
   word-break: break-word;
 
@@ -79,6 +81,7 @@ $level-size: $type-base-size;
     font-family: var(--header-font);
     font-weight: 700;
 
+    @include lhCrop(calc(2px + 2ex + 2px), 1);
     // Limit in place based on testing -> smaller ratios are
     // prematurely or unnecessarily reduced
     @if ($type-size-ratio > 1.2) {
@@ -107,7 +110,11 @@ $level-size: $type-base-size;
       // 4vw was selected by testing from $type-ratios map, YMMV 🙃
       $fluid-scaler: ($level-unitless - $fluid-min) + 4vw;
 
-      font-size: unquote('min(max(#{$fluid-min}rem, #{$fluid-scaler}), #{$level-size})');
+      font-size: clamp(
+        #{$fluid-min}rem,
+        #{$level-size},
+        #{$fluid-scaler}
+      ); //unquote('min(max(#{$fluid-min}rem, #{$fluid-scaler}), #{$level-size})');
     }
   }
 }
@@ -116,10 +123,12 @@ $level-size: $type-base-size;
   @return map-get($type-styles, $key);
 }
 
-p {
+p,
+td {
   font-family: var(--primary-font);
-  //margin-bottom: 1.3em;
+  margin-bottom: 1.3em;
   line-height: calc(2px + 3.5ex + 2px);
+  @include lhCrop(calc(2px + 3.5ex + 2px), 1);
 }
 
 * > *:last-of-type(p) {

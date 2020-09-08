@@ -38,19 +38,31 @@ $gray: (
 );
 
 :root {
-  --body-background-color: #f8f9fa;
+  --body-background-color: #ffffff;
 
   --primary-color: #{$ds-color-primary};
   --primary-color-light: #{lighten($ds-color-primary, 5%)};
-  --primary-color-lighter: #{lighten($ds-color-primary, 25%)};
+  --primary-color-lighter: #{lighten($ds-color-primary, 15%)};
+  --primary-color-lightest: #{lighten($ds-color-primary, 20%)};
   --primary-color-dark: #{darken($ds-color-primary, 5%)};
   --primary-color-darker: #{darken($ds-color-primary, 25%)};
+  --primary-color-darkest: #{darken($ds-color-primary, 38%)};
 
   --secondary-color: #{$ds-color-secondary};
   --secondary-color-light: #{lighten($ds-color-secondary, 5%)};
   --secondary-color-lighter: #{lighten($ds-color-secondary, 25%)};
+  --secondary-color-lightest: #{lighten($ds-color-secondary, 38%)};
   --secondary-color-dark: #{darken($ds-color-secondary, 5%)};
   --secondary-color-darker: #{darken($ds-color-secondary, 25%)};
+  --secondary-color-darkest: #{darken($ds-color-secondary, 38%)};
+
+  --accent-color: #{$ds-color-accent};
+  --accent-color-light: #{lighten($ds-color-accent, 5%)};
+  --accent-color-lighter: #{lighten($ds-color-accent, 25%)};
+  --accent-color-lightest: #{lighten($ds-color-accent, 38%)};
+  --accent-color-dark: #{darken($ds-color-accent, 5%)};
+  --accent-color-darker: #{darken($ds-color-accent, 25%)};
+  --accent-color-darkest: #{darken($ds-color-accent, 38%)};
 
   --gray-color: #{hsb(map-get($gray, 'h'), map-get($gray, 's'), map-get($gray, 'b'))};
   --gray-color-light: #{hsb(map-get($gray, 'h'), map-get($gray, 's'), map-get($gray, 'b') + 25)};
