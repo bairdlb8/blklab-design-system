@@ -17,6 +17,11 @@
     --container-max-width: 100%;
   }
 
+  &.narrow {
+    --container-width: 80ch;
+    --container-max-width: 95%;
+  }
+
   &.light {
     background-color: transparent;
   }

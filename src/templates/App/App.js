@@ -7,6 +7,7 @@ import { useFilter } from '../../hooks/useFilter'
 import './App.scss'
 
 import Layout from '../../layouts/Layout'
+import TwoUp from '../../layouts/TwoUp'
 
 import Container from '../../containers/Container'
 
@@ -22,21 +23,49 @@ import TextInput from '../../basics/TextInput'
 import DataTable from '../../components/DataTable'
 import Pagination from '../../components/Pagination'
 
-import generate from '../../../mocks/data'
+import { GeneratePeople } from '../../../mocks/data'
+import Icon from '../../basics/Icon'
 
 //TODO: Debounce input
 
-const baseData = generate()
+const baseData = GeneratePeople()
+
+// const headers = {
+//   business: {
+//     title: 'Business',
+//     sortDirections: ['ascending', 'descending']
+//   },
+//   name: { title: 'Name', sortDirections: ['ascending', 'descending'] },
+//   type: { title: 'Type' },
+//   date: { title: 'Date', render: (data) => <DateElement dateString={data} /> },
+//   action: {
+//     title: '',
+//     render: () => (
+//       <>
+//         <Icon icon="edit-outline" className="mr-2" /> <Icon icon="trash-outline" />
+//       </>
+//     )
+//   }
+// }
 
 const headers = {
-  business: {
-    title: 'Business',
+  firstName: {
+    title: 'First Name',
     sortDirections: ['ascending', 'descending']
   },
-  name: { title: 'Name', sortDirections: ['ascending', 'descending'] },
-  type: { title: 'Type' },
-  date: { title: 'Date', render: (data) => <DateElement dateString={data} /> },
-  action: { title: '', render: () => <Button hollow={true}>Action!</Button> }
+  lastName: {
+    title: 'Last Name',
+    sortDirections: ['ascending', 'descending']
+  },
+  email: { title: 'Email' },
+  action: {
+    title: '',
+    render: () => (
+      <>
+        <Icon icon="edit-outline" className="mr-2" /> <Icon icon="trash-outline" />
+      </>
+    )
+  }
 }
 
 let timer
@@ -47,7 +76,7 @@ const App = ({ className = '' }) => {
   })
   let { data, onSort, sortConfig } = useSortableData(baseData)
   let [filteredData, onFilter, filterConfig] = useFilter(data, {
-    searchFields: ['business', 'name']
+    searchFields: ['firstName', 'lastName']
   })
   let [pagedData, onPage, pageConfig] = usePagination(filteredData)
 
@@ -73,7 +102,13 @@ const App = ({ className = '' }) => {
       <Container>
         <Heading>Data Table</Heading>
 
-        <TextInput fullWidth={true} onChange={handleFilter} placeholder="Search" icon="search" />
+        <TextInput
+          fullWidth={true}
+          onChange={handleFilter}
+          placeholder="Search"
+          icon="search"
+          clear={true}
+        />
         <DataTable
           multiSelect={true}
           headers={headers}
@@ -82,34 +117,24 @@ const App = ({ className = '' }) => {
           sortConfig={sortConfig}
           onSelect={handleSelect}
         ></DataTable>
-
-        {state.selectedItems.length > 0 && (
-          <>
-            <Button onClick={doAction}>Do Something</Button> <Spacer size={4} />
-          </>
-        )}
         <Spacer size={4} />
-        <Pagination
-          onPage={onPage}
-          currentPage={pageConfig.currentPage}
-          pageSize={pageConfig.pageSize}
-          totalPages={pageConfig.totalPages}
-        />
-      </Container>
-
-      <Spacer size={8} />
-
-      <Container>
-        <Heading>Form</Heading>
-        <form>
-          <TextInput
-            name="name"
-            label="Name"
-            helpText="Enter your first name"
-            errorMessage="Please enter your name"
-            error={true}
-          />
-        </form>
+        <TwoUp>
+          <div>
+            {state.selectedItems.length > 0 && (
+              <>
+                <Button onClick={doAction}>Do Something</Button> <Spacer size={4} />
+              </>
+            )}
+          </div>
+          <div>
+            <Pagination
+              onPage={onPage}
+              currentPage={pageConfig.currentPage}
+              pageSize={pageConfig.pageSize}
+              totalPages={pageConfig.totalPages}
+            />
+          </div>
+        </TwoUp>
       </Container>
 
       <Spacer size={8} />

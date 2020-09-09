@@ -8,6 +8,7 @@ function Container({
   maxWidth,
   fullWidth = false,
   fullHeight = false,
+  narrow = false,
   color = 'light'
 }) {
   let styles = {}
@@ -19,7 +20,7 @@ function Container({
       style={styles}
       className={`ds-container mx-auto ${fullWidth ? 'full-width' : ''} ${
         fullHeight ? 'full-height' : ''
-      } ${color ? color : ''} ${className}`}
+      } ${color ? color : ''} ${className} ${narrow ? 'narrow' : ''}`}
     >
       {children}
     </section>

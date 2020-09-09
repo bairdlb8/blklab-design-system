@@ -6,7 +6,7 @@
   }
   .help {
     font-weight: normal;
-    color: var(--text-color-medium, #999);
+    color: var(--gray-color-dark, #999);
   }
   &__input {
     border-radius: var(--border-radius);
@@ -17,6 +17,7 @@
     transition: border-color var(--animation-speed-fast);
     padding: 0 var(--spacer-2);
     width: 85ch;
+    max-width: 100%;
 
     &.full-width {
       width: 100%;
@@ -38,9 +39,15 @@
       height: var(--button-height, 45px);
       transition: all var(--animation-speed-fast, 0.25s) var(--animation-easing-linear);
       border: none;
+      width: 100%;
       &:focus {
         outline: none;
       }
+    }
+
+    button {
+      background: none;
+      border: none;
     }
   }
 
