@@ -13,7 +13,7 @@
     "cypress:open": "cypress open",
     "generate": "plop",
     "compile:tokens": "style-dictionary build",
-    "prepublish": "yarn build"
+    "prepare": "yarn build:webpack"
   },
   "dependencies": {
     "postinstall-build": "^5.0.3"

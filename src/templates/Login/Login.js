@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
 
 import Layout from '../../layouts/Layout'
@@ -12,6 +12,7 @@ import Button from '../../basics/Button/Button'
 import Header from '../../features/Header'
 
 const Login = ({ className = '' }) => {
+  let ref = useRef()
   return (
     <Layout>
       <Header></Header>
@@ -28,6 +29,7 @@ const Login = ({ className = '' }) => {
           helpText="Password needs to be long"
           errorMessage="Your password is incorrect"
           required={true}
+          ref={ref}
         />
         <Spacer size={2} />
         <div>

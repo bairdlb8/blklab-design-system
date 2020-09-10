@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { forwardRef, useState } from 'react'
 import PropTypes from 'prop-types'
 import './TextInput.scss'
 import Icon from '../Icon'
@@ -6,7 +6,8 @@ import Icon from '../Icon'
 const emailReg = new RegExp(
   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 )
-function TextInput({
+
+const TextInput = forwardRef(({
   label,
   type = 'text',
   inputMode = 'text',
@@ -23,7 +24,7 @@ function TextInput({
   icon,
   iconSide = 'left',
   clear
-}) {
+}, ref) => {
   const Messages = {
     empty: 'Please fill out this field',
     wrong: errorMessage
@@ -58,6 +59,7 @@ function TextInput({
       >
         {icon && iconSide === 'left' && <Icon icon={icon} size="large" />}
         <input
+          ref={ref}
           name={name}
           type={type === 'password' && state.visible ? 'text' : type}
           inputMode={inputMode}
@@ -80,7 +82,7 @@ function TextInput({
       <div className="error">{state.error ? Messages[state.errorState] : ''}</div>
     </div>
   )
-}
+})
 
 export default TextInput
 
