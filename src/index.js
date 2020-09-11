@@ -15,8 +15,8 @@ import Button from './basics/Button'
 import Checkbox from './basics/Checkbox'
 import Link from './basics/Link'
 import Heading from './basics/Heading'
-import Heading from './basics/Date'
-import Date from './basics/Loading'
+import Date from './basics/Date'
+import Loading from './basics/Loading'
 import Spacer from './basics/Spacer'
 import Icon from './basics/Icon'
 import Tag from './basics/Tag'
@@ -31,11 +31,11 @@ export {
   Date,
   Loading,
   Spacer,
+  Icon,
   Tag,
   Text,
   TextInput,
-  Toggle,
-  Icon
+  Toggle
 }
 
 //Components
