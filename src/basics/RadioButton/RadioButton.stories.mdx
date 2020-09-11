@@ -2,7 +2,7 @@ import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
 
 import RadioButton from './RadioButton'
 
-<Meta title="Basics / RadioButton" component={ RadioButton } />
+<Meta title="Basics / RadioButton" component={RadioButton} />
 
 # RadioButton
 
@@ -13,9 +13,9 @@ export const Template = (args) => {
 }
 
 <Preview withToolbar>
-  <Story name="Primary" args={ {} }>
+  <Story name="Primary" args={{ label: 'Test' }}>
     {Template.bind({})}
   </Story>
 </Preview>
 
-<Props of={ RadioButton } />
+<Props of={RadioButton} />

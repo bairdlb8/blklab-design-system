@@ -1,0 +1,19 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+
+import FormView from './FormView'
+
+<Meta title="Templates / Form View" component={FormView} />
+
+# FormView
+
+export const Template = (args) => {
+  return <FormView {...args} />
+}
+
+<Preview withToolbar>
+  <Story name="Example" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props of={FormView} />

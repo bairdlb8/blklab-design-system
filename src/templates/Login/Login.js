@@ -21,7 +21,12 @@ const Login = ({ className = '' }) => {
           Login
         </Heading>
         <p>This is some text about logging in</p>
-        <TextInput type="email" label="Username" errorMessage="Please enter a valid email" />
+        <TextInput
+          type="email"
+          icon="email-outline"
+          label="Username"
+          errorMessage="Please enter a valid email"
+        />
         <Spacer size={4} />
         <TextInput
           type="password"
@@ -29,6 +34,7 @@ const Login = ({ className = '' }) => {
           helpText="Password needs to be long"
           errorMessage="Your password is incorrect"
           required={true}
+          icon="lock-outline"
           ref={ref}
         />
         <Spacer size={2} />
@@ -36,7 +42,7 @@ const Login = ({ className = '' }) => {
           <a href="#">Create and Account</a> | <a href="#">Forgot your password?</a>
         </div>
         <Spacer size={2} />
-        <Button icon="chevron-right">Login</Button>
+        <Button icon="arrow-forward-outline">Login</Button>
       </Container>
     </Layout>
   )

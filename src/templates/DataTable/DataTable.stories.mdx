@@ -1,0 +1,21 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+
+import DataTable from './DataTable'
+
+<Meta title="Templates / Table View" component={DataTable} />
+
+# DataTable
+
+## This is an example of a data table
+
+export const Template = (args) => {
+  return <DataTable {...args} />
+}
+
+<Preview withToolbar>
+  <Story name="Example" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props of={DataTable} />
