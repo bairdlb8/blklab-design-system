@@ -14,19 +14,36 @@ export { styles }
 import Button from './basics/Button'
 import Checkbox from './basics/Checkbox'
 import Link from './basics/Link'
-import Loading from './basics/Loading'
+import Heading from './basics/Heading'
+import Heading from './basics/Date'
+import Date from './basics/Loading'
 import Spacer from './basics/Spacer'
+import Icon from './basics/Icon'
 import Tag from './basics/Tag'
 import Text from './basics/Text'
 import TextInput from './basics/TextInput'
 import Toggle from './basics/Toggle'
-export { Button, Checkbox, Link, Loading, Spacer, Tag, Text, TextInput, Toggle }
+export {
+  Button,
+  Checkbox,
+  Link,
+  Heading,
+  Date,
+  Loading,
+  Spacer,
+  Tag,
+  Text,
+  TextInput,
+  Toggle,
+  Icon
+}
 
 //Components
 import Card from './components/Card'
 import DataTable from './components/DataTable'
+import Pagination from './components/Pagination'
 
-export {Card, DataTable }
+export { Card, DataTable, Pagination }
 
 //Containers
 import Container from './containers/Container'
@@ -49,4 +66,4 @@ import Header from './features/Header'
 import Footer from './features/Footer'
 import Hero from './features/Hero'
 
-export {Header, Footer, Hero }
+export { Header, Footer, Hero }
