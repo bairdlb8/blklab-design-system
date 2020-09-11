@@ -75,9 +75,10 @@ $gray: (
   --text-color-dark: #{$ds-color-text-base};
   --text-color-medium: #{$ds-color-text-mid};
 
-  --success-color: #{hsb(0, 0, 0)};
-  --warning-color: #{hsb(0, 0, 0)};
-  --error-color: #{hsb(339, 47, 97)};
+  --success-color: #{$ds-color-utility-success};
+  --warning-color: #{$ds-color-utility-warning};
+  --error-color: #{$ds-color-utility-error};
+  --info-color: #{$ds-color-utility-info};
 
   --border-color: #{hsb(0, 0, 0)};
 

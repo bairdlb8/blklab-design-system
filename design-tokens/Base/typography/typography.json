@@ -2,10 +2,10 @@
   "ds": {
     "typography": {
       "header": {
-        "value": "Raleway"
+        "value": "Lato"
       },
       "body": {
-        "value": "Public Sans"
+        "value": "Lato"
       },
       "scale": {
         "key": "perfectFourth",
@@ -13,7 +13,7 @@
         "value": 1.333
       },
       "import": {
-        "value": "'https://fonts.googleapis.com/css?family=Raleway:wght@700|Public+Sans:wght@400,700&display=swap'"
+        "value": "'https://fonts.googleapis.com/css?family=Lato:wght@400,700&display=swap'"
       }
     }
   }

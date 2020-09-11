@@ -9,7 +9,7 @@
       "color": {
         "primary": {
           "foreground": {
-            "value": "{ds.color.text.base.value}"
+            "value": "{ds.color.text.white.value}"
           },
           "background": {
             "value": "{ds.color.primary.value}"

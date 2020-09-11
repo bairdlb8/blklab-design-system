@@ -31,6 +31,9 @@ import Spacer from './basics/Spacer'
     {Object.entries(Colors.ds.color.gray).map(([key, val]) => {
       return <ColorCard hexColor={val.value} name={val.name} usage={val.usage} />
     })}
+    {Object.entries(Colors.ds.color.utility).map(([key, val]) => {
+      return <ColorCard hexColor={val.value} name={val.name} usage={val.usage} />
+    })}
   </GridContainer>
 </>
 

@@ -5,8 +5,8 @@
   align-items: start;
 
   --checked-state-bg-color: var(--accent-color-lighter);
-  --checked-state-check-color: var(--accent-color-darker);
-  --outline-color: var(--checked-state-bg-color);
+  --checked-state-check-color: var(--secondary-color-darker);
+  --outline-color: var(--gray-color-light);
   --outline-offset: 2px;
   font-size: 24px;
 
@@ -40,6 +40,10 @@
       transition: all 0.2s linear;
     }
     vertical-align: middle;
+
+    .cb-bg {
+      stroke: var(--gray-color-light);
+    }
   }
 
   input[type='checkbox']:hover + svg {

@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 09 Sep 2020 03:27:30 GMT
+ * Generated on Fri, 11 Sep 2020 03:12:20 GMT
  */
 
 :root {
@@ -37,29 +37,35 @@
   --animation-speed-fast: 0.25s;
   --animation-speed-normal: 0.35s;
   --animation-speed-slow: 0.45s;
-  --ds-color-primary: #F784AD;
-  --ds-color-secondary: #212429;
-  --ds-color-accent: #4263EB;
+  --ds-color-primary: #2483d0;
+  --ds-color-secondary: #e2f3f9;
+  --ds-color-accent: #17222b;
   --ds-color-text-base: #212429;
   --ds-color-text-mid: #495057;
   --ds-color-text-light: #ACB5BD;
   --ds-color-text-white: #fff;
-  --ds-color-text-accent-foreground: #fff;
+  --ds-color-text-primary: #fff;
+  --ds-color-text-secondary: #fff;
+  --ds-color-text-accent: #212429;
   --ds-color-gray-mid: #ACB5BD;
   --ds-color-gray-light: #DDE2E5;
   --ds-color-gray-dark: #495057;
+  --ds-color-utility-error: #d0245d;
+  --ds-color-utility-warning: #d08924;
+  --ds-color-utility-success: #24d048;
+  --ds-color-utility-info: #24aed0;
   --ds-spacing-steps: 20;
   --ds-spacing-base: 8;
   --ds-spacing-container-max-width: 1200px;
   --ds-spacing-container-mobile-max-width: 95%;
   --ds-spacing-grid-gap: 12px;
-  --ds-typography-header: Raleway;
-  --ds-typography-body: Public Sans;
+  --ds-typography-header: Lato;
+  --ds-typography-body: Lato;
   --ds-typography-scale: 1.333;
-  --ds-typography-import: 'https://fonts.googleapis.com/css?family=Raleway:wght@700|Public+Sans:wght@400,700&display=swap';
+  --ds-typography-import: 'https://fonts.googleapis.com/css?family=Lato:wght@400,700&display=swap';
   --ds-button-padding-horizontal: 16px;
-  --ds-button-color-primary-foreground: #212429;
-  --ds-button-color-primary-background: #F784AD;
+  --ds-button-color-primary-foreground: #fff;
+  --ds-button-color-primary-background: #2483d0;
   --ds-button-color-secondary-foreground: #fff;
-  --ds-button-color-secondary-background: #212429;
+  --ds-button-color-secondary-background: #e2f3f9;
 }

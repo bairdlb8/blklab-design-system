@@ -2,7 +2,7 @@ import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
 
 import List from './List'
 
-<Meta title="Components / List" component={ List } />
+<Meta title="Components / List" component={List} />
 
 # List
 
@@ -13,9 +13,21 @@ export const Template = (args) => {
 }
 
 <Preview withToolbar>
-  <Story name="Primary" args={ {} }>
+  <Story
+    name="Primary"
+    args={{
+      items: [
+        {
+          title: 'Test 1',
+          subtitle: 'This is a subtitle',
+          description: 'Need to write something here.',
+          id: '252434'
+        }
+      ]
+    }}
+  >
     {Template.bind({})}
   </Story>
 </Preview>
 
-<Props of={ List } />
+<Props of={List} />

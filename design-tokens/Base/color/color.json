@@ -2,24 +2,18 @@
   "ds": {
     "color": {
       "primary": {
-        "value": "#F784AD",
-        "name": "Pink",
-        "usage": "var(--ds-color-primary)",
-        "text": {
-          "value": "{ds.color.text.base.value}"
-        }
+        "value": "#2483d0",
+        "name": "Blue",
+        "usage": "var(--ds-color-primary)"
       },
       "secondary": {
-        "value": "#212429",
-        "name": "Charcoal",
-        "usage": "var(--ds-color-secondary)",
-        "text": {
-          "value": "{ds.color.text.white.value}"
-        }
+        "value": "#e2f3f9",
+        "name": "Light Blue",
+        "usage": "var(--ds-color-secondary)"
       },
       "accent": {
-        "value": "#4263EB",
-        "name": "Blue",
+        "value": "#17222b",
+        "name": "Dark Blue",
         "usage": "var(--ds-color-accent)"
       },
       "text": {
@@ -35,10 +29,14 @@
         "white": {
           "value": "#fff"
         },
+        "primary": {
+          "value": "{ds.color.text.white.value}"
+        },
+        "secondary": {
+          "value": "{ds.color.text.white.value}"
+        },
         "accent": {
-          "foreground": {
-            "value": "{ds.color.text.white.value}"
-          }
+          "value": "{ds.color.text.base.value}"
         }
       },
       "gray": {
@@ -56,6 +54,28 @@
           "value": "#495057",
           "name": "Dark Gray",
           "usage": "var(--ds-color-dark-mid)"
+        }
+      },
+      "utility": {
+        "error": {
+          "value": "#d0245d",
+          "name": "Error",
+          "usage": "var(--ds-color-utility-error)"
+        },
+        "warning": {
+          "value": "#d08924",
+          "name": "Warning",
+          "usage": "var(--ds-color-utility-warning)"
+        },
+        "success": {
+          "value": "#24d048",
+          "name": "Success",
+          "usage": "var(--ds-color-utility-success)"
+        },
+        "info": {
+          "value": "#24aed0",
+          "name": "Info",
+          "usage": "var(--ds-color-utility-info)"
         }
       }
     }

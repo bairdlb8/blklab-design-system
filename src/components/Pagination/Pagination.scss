@@ -6,6 +6,7 @@
     &:hover,
     &.active {
       background-color: var(--primary-color);
+      color: var(--ds-color-text-primary);
     }
   }
 }
