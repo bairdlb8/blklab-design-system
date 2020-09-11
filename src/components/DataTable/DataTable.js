@@ -11,7 +11,8 @@ function DataTable({
   multiSelect = false,
   onSort = () => {},
   sortConfig = { key: null, direction: null },
-  onSelect = () => {}
+  onSelect = () => {},
+  emptyMessage = 'There are no items here'
 }) {
   let [state, setState] = useState({
     checked: [],
@@ -95,6 +96,13 @@ function DataTable({
           </tr>
         </thead>
         <tbody>
+          {data.length === 0 && (
+            <tr>
+              <td colSpan={_headers.length + 1} className="text-align-center">
+                {emptyMessage}
+              </td>
+            </tr>
+          )}
           {data.length > 0 &&
             data.map((row, idx) => {
               return (
