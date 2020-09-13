@@ -5,6 +5,11 @@ import './DataTable.scss'
 import Checkbox from '../../basics/Checkbox'
 import Icon from '../../basics/Icon'
 
+function resolve(path, obj = self, separator = '.') {
+  var properties = Array.isArray(path) ? path : path.split(separator)
+  return properties.reduce((prev, curr) => prev && prev[curr], obj)
+}
+
 function DataTable({
   headers = [],
   data = [],
@@ -121,7 +126,7 @@ function DataTable({
                         key={`td-${key}-${idx}`}
                         className={`${i > 0 ? 'md-display-none' : null}`}
                       >
-                        {column.render ? column.render(row[key]) : row[key]}
+                        {column.render ? column.render(resolve(key, row)) : resolve(key, row)}
                       </td>
                     )
                   })}

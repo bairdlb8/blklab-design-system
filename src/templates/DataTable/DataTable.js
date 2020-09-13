@@ -49,11 +49,11 @@ const baseData = GeneratePeople()
 // }
 
 const headers = {
-  firstName: {
+  'user.firstName': {
     title: 'First Name',
     sortDirections: ['ascending', 'descending']
   },
-  lastName: {
+  'user.lastName': {
     title: 'Last Name',
     sortDirections: ['ascending', 'descending']
   },
