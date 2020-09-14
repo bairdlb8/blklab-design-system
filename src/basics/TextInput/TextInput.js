@@ -25,8 +25,7 @@ const TextInput = forwardRef(
       onChange = null,
       icon,
       iconSide = 'left',
-      clear,
-      value
+      clear
     },
     ref
   ) => {
@@ -66,7 +65,6 @@ const TextInput = forwardRef(
           <input
             ref={ref}
             name={name}
-            defaultValue={value}
             type={type === 'password' && state.visible ? 'text' : type}
             inputMode={inputMode}
             disabled={disabled}
