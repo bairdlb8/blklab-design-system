@@ -66,6 +66,7 @@ const TextInput = forwardRef(
           <input
             ref={ref}
             name={name}
+            defaultValue={value}
             type={type === 'password' && state.visible ? 'text' : type}
             inputMode={inputMode}
             disabled={disabled}
@@ -75,7 +76,6 @@ const TextInput = forwardRef(
             onChange={onChange}
             required={required}
             onBlur={validate}
-            value={value}
           />
           {icon && iconSide === 'right' && <Icon icon={icon} />}
           {clear && <Icon size="large" icon="close-circle-outline" />}
