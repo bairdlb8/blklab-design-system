@@ -126,7 +126,9 @@ function DataTable({
                         key={`td-${key}-${idx}`}
                         className={`${i > 0 ? 'md-display-none' : null}`}
                       >
-                        {column.render ? column.render(resolve(key, row), idx) : resolve(key, row)}
+                        {column.render
+                          ? column.render(key !== 'action' ? resolve(key, row) : row, idx)
+                          : resolve(key, row)}
                       </td>
                     )
                   })}
