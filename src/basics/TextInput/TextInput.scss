@@ -61,3 +61,10 @@
     color: var(--error-color, #ff0000);
   }
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  border-color: var(--primary-color-light);
+  background-color: #fff;
+}
