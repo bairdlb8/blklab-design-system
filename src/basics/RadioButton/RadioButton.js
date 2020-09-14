@@ -1,19 +1,19 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import PropTypes from 'prop-types'
 
 import './RadioButton.scss'
 
-const RadioButton = ({ label = '', name = '', value = '', className = '' }) => {
+const RadioButton = forwardRef(({ label = '', name = '', value = '', className = '' }, ref) => {
   return (
     <label className={`ds-radio-button radio-before ${className}`}>
       <span className="radio__input">
-        <input type="radio" name={name} value={value} />
+        <input type="radio" name={name} value={value} ref={ref} />
         <span className="radio__control"></span>
       </span>
       <span className="radio__label">{label}</span>
     </label>
   )
-}
+})
 
 RadioButton.propTypes = {}
 

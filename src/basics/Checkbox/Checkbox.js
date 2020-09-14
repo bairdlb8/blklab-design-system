@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import './Checkbox.scss'
 //Needs to support spacebar selection
 
-function Checkbox({ label = '', checked = false, onChange = null }) {
+const Checkbox = forwardRef(({ label = '', checked = false, onChange = null }, ref) => {
   return (
     <>
       <label className="ds-checkbox">
@@ -10,6 +10,7 @@ function Checkbox({ label = '', checked = false, onChange = null }) {
           type="checkbox"
           checked={checked ? true : null}
           onChange={onChange ? onChange : null}
+          ref={ref}
         />
         <svg width="32" height="32" viewBox="-4 -4 39 39" aria-hidden="true" focusable="false">
           <rect
@@ -37,6 +38,6 @@ function Checkbox({ label = '', checked = false, onChange = null }) {
       </label>
     </>
   )
-}
+})
 
 export default Checkbox
