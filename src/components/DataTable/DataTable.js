@@ -17,7 +17,8 @@ function DataTable({
   onSort = () => {},
   sortConfig = { key: null, direction: null },
   onSelect = () => {},
-  emptyMessage = 'There are no items here'
+  emptyMessage = 'There are no items here',
+  onRowClick
 }) {
   let [state, setState] = useState({
     checked: [],
@@ -111,7 +112,7 @@ function DataTable({
           {data.length > 0 &&
             data.map((row, idx) => {
               return (
-                <tr key={`tr-${idx}`}>
+                <tr key={`tr-${idx}`} onClick={onRowClick ? onRowClick : null}>
                   {multiSelect && (
                     <td>
                       <Checkbox
