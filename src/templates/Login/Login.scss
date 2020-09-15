@@ -1,3 +1,25 @@
-.login{
+.ds-login {
+  section {
+    min-height: 100vh;
 
+    &.form {
+      form {
+        max-width: 70%;
+      }
+
+      .logo {
+        width: 80px;
+      }
+    }
+
+    &.image {
+      background-color: #f0fafc;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: bottom;
+      }
+    }
+  }
 }

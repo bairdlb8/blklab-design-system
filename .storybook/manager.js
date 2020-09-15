@@ -5,7 +5,7 @@ addons.setConfig({
   panelPosition: 'right',
   theme: create({
     base: 'dark',
-    brandTitle: 'My Storybook',
+    brandTitle: 'WSMA',
     brandUrl: '/',
     brandImage: null,
     appBorderRadius: 0

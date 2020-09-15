@@ -5,7 +5,7 @@
   "author": "Baird Lackner-Buckingham",
   "license": "MIT",
   "scripts": {
-    "sb:start": "start-storybook",
+    "start-storybook": "start-storybook -s ./public -p 9500",
     "build": "cross-env BABEL_ENV=production babel src -d dist",
     "build:webpack": "NODE_ENV=production webpack --mode production",
     "build-storybook-docs": "build-storybook -s public --docs",

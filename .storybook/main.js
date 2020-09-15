@@ -10,6 +10,7 @@ module.exports = {
     '../src/layouts/**/*.stories.(js|mdx)',
     '../src/containers/**/*.stories.(js|mdx)',
     '../src/templates/**/*.stories.(js|mdx)',
+    '../src/pages/**/*.stories.(js|mdx)',
     '../src/*.stories.(js|mdx)'
   ],
   addons: [

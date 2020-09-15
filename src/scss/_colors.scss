@@ -85,6 +85,14 @@ $gray: (
   .light-text {
     color: var(--text-color-light);
   }
+
+  .color-primary {
+    color: var(--primary-color);
+  }
+
+  a {
+    color: var(--primary-color);
+  }
 }
 
 //@media (prefers-color-scheme: dark) {

@@ -27,7 +27,16 @@ module.exports = (plop) => {
         name: 'container',
         // Prompt to display on command line
         message: 'Choose container?',
-        choices: ['basics', 'components', 'containers', 'features', 'layouts', 'templates', 'guide']
+        choices: [
+          'basics',
+          'components',
+          'containers',
+          'features',
+          'layouts',
+          'templates',
+          'guide',
+          'pages'
+        ]
       }
     ],
     actions: (data) => {

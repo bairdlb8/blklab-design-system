@@ -19,10 +19,10 @@ $type-ratios: (
 );
 
 // Recommended starting point
-$type-base-size: 1rem;
+$type-base-size: 1.25rem;
 
 // Select by key of map, or use a custom value
-$type-size-ratio: $ds-typography-scale; //type-ratios(#{$ds-typography-scale});
+$type-size-ratio: 1.2; //$ds-typography-scale; //type-ratios(#{$ds-typography-scale});
 
 /*map-get(
   $map: $type-ratios,
@@ -38,7 +38,7 @@ body {
   font-weight: 400;
   color: #190909;
   font-size: 1rem;
-  line-height: calc(2px + 3.5ex + 2px);
+  line-height: calc(2px + 2ex + 2px);
 }
 
 p,
@@ -127,8 +127,9 @@ p,
 td {
   font-family: var(--primary-font);
   margin-bottom: 1.3em;
-  line-height: calc(2px + 3.5ex + 2px);
-  @include lhCrop(calc(2px + 3.5ex + 2px), 1);
+  line-height: calc(2px + 2ex + 2px);
+  @include lhCrop(calc(2px + 2ex + 2px), 1);
+  font-size: 1.25em;
 }
 
 * > *:last-of-type(p) {

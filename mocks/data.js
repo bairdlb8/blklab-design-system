@@ -3,10 +3,8 @@ import faker from 'faker'
 export const GeneratePeople = (howMany = 20) => {
   return new Array(howMany).fill(0).map(() => {
     return {
-      user: {
-        firstName: faker.name.firstName(),
-        lastName: faker.name.lastName()
-      },
+      firstName: faker.name.firstName(),
+      lastName: faker.name.lastName(),
       email: faker.internet.email()
     }
   })
