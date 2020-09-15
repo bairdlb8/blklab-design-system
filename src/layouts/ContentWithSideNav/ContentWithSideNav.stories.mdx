@@ -1,0 +1,32 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+
+import ContentWithSideNav from './ContentWithSideNav'
+
+<Meta title="Layouts / ContentWithSideNav" component={ContentWithSideNav} />
+
+# ContentWithSideNav
+
+## Add some text here
+
+export const Template = (args) => {
+  return <ContentWithSideNav {...args}></ContentWithSideNav>
+}
+
+<Preview withToolbar>
+  <Story
+    name="Primary"
+    args={{
+      sidebarContent: (
+        <ul>
+          <li>First Point</li>
+          <li>Second Point</li>
+          <li>Third Point</li>
+        </ul>
+      )
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props of={ContentWithSideNav} />

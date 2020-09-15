@@ -11,6 +11,7 @@ export { styles }
 
 //Basics
 
+import Avatar from './basics/Avatar'
 import Button from './basics/Button'
 import Checkbox from './basics/Checkbox'
 import Link from './basics/Link'
@@ -24,6 +25,7 @@ import Text from './basics/Text'
 import TextInput from './basics/TextInput'
 import Toggle from './basics/Toggle'
 export {
+  Avatar,
   Button,
   Checkbox,
   Link,

@@ -1,0 +1,30 @@
+@import '../../scss/_breakpoints';
+@import '../../scss/_mixins';
+
+.ds-content-with-side-nav {
+  --side-nav-width: 178px;
+  --nav-border-color: #dadada;
+
+  grid-template-columns: var(--side-nav-width) auto;
+  gap: var(--spacer-6);
+  article {
+    height: calc(100vh - 80px);
+    overflow: auto;
+  }
+
+  nav {
+    position: sticky;
+    border-right: solid 1px var(--nav-border-color);
+    color: var(--text-color-default);
+    box-sizing: border-box;
+    align-items: stretch;
+
+    ul {
+      li {
+        margin-bottom: var(--spacer-3);
+      }
+    }
+
+    @include selectFontColor(var(--text-color-default));
+  }
+}
