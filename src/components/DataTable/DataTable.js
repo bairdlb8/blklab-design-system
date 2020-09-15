@@ -112,7 +112,7 @@ function DataTable({
           {data.length > 0 &&
             data.map((row, idx) => {
               return (
-                <tr key={`tr-${idx}`} onClick={onRowClick ? onRowClick : null}>
+                <tr key={`tr-${idx}`} onClick={onRowClick ? () => onRowClick(row, idx) : null}>
                   {multiSelect && (
                     <td>
                       <Checkbox
