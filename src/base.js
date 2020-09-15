@@ -42,8 +42,9 @@ export {
 import Card from './components/Card'
 import DataTable from './components/DataTable'
 import Pagination from './components/Pagination'
+import Snackbar from './components/Snackbar'
 
-export { Card, DataTable, Pagination }
+export { Card, DataTable, Pagination, Snackbar }
 
 //Containers
 import Container from './containers/Container'

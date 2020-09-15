@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
 import './Login.scss'
-import { GridContainer, TextInput, Spacer, Heading, Button, Layout } from '../../base'
+import { GridContainer, TextInput, Spacer, Heading, Button, Layout, Snackbar } from '../../base'
 
 const Login = ({ className = '' }) => {
   let ref = useRef()
@@ -39,7 +39,6 @@ const Login = ({ className = '' }) => {
             <Spacer size={5} />
 
             <Button icon="arrow-forward-outline">Sign In</Button>
-
             <Spacer size={8} />
 
             <div>
