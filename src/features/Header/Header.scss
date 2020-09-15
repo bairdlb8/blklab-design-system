@@ -24,8 +24,9 @@
 
   nav {
     display: flex;
-    grid-column: 2/3;
+    grid-column: 3/-1;
     justify-content: center;
+    align-items: center;
     ul {
       grid-template-columns: repeat(var(--nav-item-size), auto);
       column-gap: var(--column-gap);

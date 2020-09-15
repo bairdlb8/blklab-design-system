@@ -97,7 +97,7 @@ const DataTableExample = ({ className = '' }) => {
 
   return (
     <Layout>
-      <Header condensed={true} navItems={[{ title: 'Dashboard' }, { title: 'Report' }]} />
+      <Header />
       <Spacer size={8} />
       <Container>
         <Heading>Data Table</Heading>

@@ -4,6 +4,7 @@ import './Header.scss'
 
 import Image from '../../basics/Image'
 import Icon from '../../basics/Icon'
+import { Avatar } from '../../base'
 
 function Header({
   logo,
@@ -21,16 +22,10 @@ function Header({
           <img src="/small-logo.png" width="50px" />
         </div>
       )}
-      <nav className={``} aria-label="">
-        <ul
-          className="display-grid md-display-none justify-content-end"
-          style={{ '--nav-item-size': navItems.length }}
-        >
-          {navItems.map((item) => (
-            <li key={item.title}>{item.title}</li>
-          ))}
-        </ul>
-        <Icon icon="menu" className="hamburger" size="large" />
+      <nav aria-label="">
+        <Avatar />
+        <span className="ml-2">Admin User</span>
+        {/* <Icon icon="menu" className="hamburger" size="large" /> */}
       </nav>
       {cta && cta}
     </header>
