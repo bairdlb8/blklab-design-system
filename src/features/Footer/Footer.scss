@@ -1,6 +1,16 @@
 .ds-footer {
   --footer-background-color: var(--primary-color);
 
-  height: 50vh;
+  height: 72px;
   background-color: var(--footer-background-color);
+  color: var(--ds-color-text-primary);
+
+  div {
+    height: 72px;
+    color: var(--ds-color-text-primary);
+    a {
+      color: var(--ds-color-text-primary);
+      text-decoration: underline;
+    }
+  }
 }

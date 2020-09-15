@@ -5,7 +5,7 @@ import Layout from '../../layouts/Layout'
 
 import '../Login/Login.scss'
 
-import { GridContainer, Text, TextInput, Spacer, Heading, Button } from '../../base'
+import { GridContainer, Text, TextInput, Spacer, Heading, Button, Footer } from '../../base'
 
 const ForgotPassword = ({ className = '' }) => {
   let ref = useRef()
@@ -50,6 +50,7 @@ const ForgotPassword = ({ className = '' }) => {
           <img src="/flavor-1.png" />
         </section>
       </GridContainer>
+      <Footer />
     </Layout>
   )
 }

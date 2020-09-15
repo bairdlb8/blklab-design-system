@@ -78,9 +78,9 @@ const TextInput = forwardRef(
           {icon && iconSide === 'right' && <Icon icon={icon} />}
           {clear && <Icon size="large" icon="close-circle-outline" />}
           {type == 'password' && (
-            <button onClick={() => setState({ ...state, visible: !state.visible })}>
+            <span className="button" role="button" onClick={() => setState({ ...state, visible: !state.visible })}>
               {!state.visible ? 'Show' : 'Hide'}
-            </button>
+            </span>
           )}
         </div>
         <div className="error">{state.error ? Messages[state.errorState] : ''}</div>
