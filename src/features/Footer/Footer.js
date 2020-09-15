@@ -3,9 +3,9 @@ import './Footer.scss'
 
 import { GridContainer } from '../../base'
 
-function Footer({}) {
+function Footer({ className = '' }) {
   return (
-    <footer className="mt-xl ds-footer">
+    <footer className={`ds-footer ${className}`}>
       <GridContainer gridSize={2} className="justify-content-center">
         <div className="pl-10 display-flex align-items-center">
           Copyright © {new Date().getFullYear()} Wisconsin School Music Association
