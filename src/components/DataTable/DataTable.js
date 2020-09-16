@@ -18,8 +18,9 @@ function DataTable({
   sortConfig = { key: null, direction: null },
   onSelect = () => {},
   emptyMessage = 'There are no items here',
+  onRowClick,
   loading = false,
-  onRowClick
+  loadingComponent = <div>Loading...</div>
 }) {
   let [state, setState] = useState({
     checked: [],
@@ -112,13 +113,20 @@ function DataTable({
               </td>
             </tr>
           )}
-
+          {loading && (
+            <tr>
+              <td colSpan={_headers.length + 1} className="text-align-center">
+                {loadingComponent}
+              </td>
+            </tr>
+          )}
           {data.length > 0 &&
             !loading &&
             data.map((row, idx) => {
               return (
                 <tr
-                  key={`tr-${idx} ${onRowClick ? 'cursor-pointer' : ''}`}
+                  key={`tr-${idx}`}
+                  className={`${onRowClick ? 'cursor-pointer' : ''}`}
                   onClick={onRowClick ? () => onRowClick(row, idx) : null}
                 >
                   {multiSelect && (
