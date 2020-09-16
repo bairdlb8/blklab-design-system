@@ -18,6 +18,7 @@ function DataTable({
   sortConfig = { key: null, direction: null },
   onSelect = () => {},
   emptyMessage = 'There are no items here',
+  loading = false,
   onRowClick
 }) {
   let [state, setState] = useState({
@@ -62,54 +63,58 @@ function DataTable({
   return (
     <section className="ds-data-table">
       <table>
-        <thead className="mb-lg">
-          <tr>
-            {multiSelect && (
-              <th>
-                <Checkbox onChange={checkAll} />
-              </th>
-            )}
-            {_headers.map(([key, header], idx) => (
-              <th
-                key={`th-${key}`}
-                className={`${idx > 0 ? 'md-display-none' : null}`}
-                role="columnheader"
-              >
-                {header.title}
-                {header.sortDirections && (
-                  <span className="ds_sort__icons ml-xxs">
-                    {header.sortDirections.map((dir) => {
-                      return (
-                        <Icon
-                          className={`cursor-pointer ${
-                            sortConfig.key == key && sortConfig.direction == dir ? 'active' : ''
-                          } `}
-                          key={`${key}-${dir}`}
-                          icon={dirMap[dir]}
-                          onClick={(ev) =>
-                            onSort({
-                              key,
-                              direction: dir
-                            })
-                          }
-                        />
-                      )
-                    })}
-                  </span>
-                )}
-              </th>
-            ))}
-          </tr>
-        </thead>
+        {data.length > 0 && (
+          <thead className="mb-lg">
+            <tr>
+              {multiSelect && (
+                <th>
+                  <Checkbox onChange={checkAll} />
+                </th>
+              )}
+              {_headers.map(([key, header], idx) => (
+                <th
+                  key={`th-${key}`}
+                  className={`${idx > 0 ? 'md-display-none' : null}`}
+                  role="columnheader"
+                >
+                  {header.title}
+                  {header.sortDirections && (
+                    <span className="ds_sort__icons ml-xxs">
+                      {header.sortDirections.map((dir) => {
+                        return (
+                          <Icon
+                            className={`cursor-pointer ${
+                              sortConfig.key == key && sortConfig.direction == dir ? 'active' : ''
+                            } `}
+                            key={`${key}-${dir}`}
+                            icon={dirMap[dir]}
+                            onClick={(ev) =>
+                              onSort({
+                                key,
+                                direction: dir
+                              })
+                            }
+                          />
+                        )
+                      })}
+                    </span>
+                  )}
+                </th>
+              ))}
+            </tr>
+          </thead>
+        )}
         <tbody>
-          {data.length === 0 && (
+          {data.length === 0 && !loading && (
             <tr>
               <td colSpan={_headers.length + 1} className="text-align-center">
                 {emptyMessage}
               </td>
             </tr>
           )}
+
           {data.length > 0 &&
+            !loading &&
             data.map((row, idx) => {
               return (
                 <tr
