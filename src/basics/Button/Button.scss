@@ -83,6 +83,7 @@
     border-color: var(--text-color-default);
     &:hover {
       background-color: var(--primary-color);
+      color: var(--ds-button-color-primary-foreground, #fff);
     }
 
     &:focus {
