@@ -15,7 +15,7 @@ const Snackbar = ({ className = '', children, status = 'idle', onDismiss }) => {
   }, [])
 
   return (
-    <div className={`ds-snackbar ${state.uiState} ${status}`}>
+    <div className={`ds-snackbar ${className} ${state.uiState} ${status}`}>
       <div className="ds-snackbar__message">{children}</div>
       {onDismiss && (
         <div className="ds-snackbar__action" onClick={onDismiss}>
