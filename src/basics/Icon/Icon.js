@@ -4,7 +4,14 @@ import './Icon.scss'
 
 import 'eva-icons/style/eva-icons.css'
 
-function Icon({ icon = '', size = 'medium', className = '', focusable = null, ariaHidden = null, onClick=() => {} }) {
+function Icon({
+  icon = '',
+  size = 'medium',
+  className = '',
+  focusable = null,
+  ariaHidden = null,
+  onClick = () => {}
+}) {
   return (
     <span
       className={`ds-icon eva eva-${icon} ${className} ${size}`}

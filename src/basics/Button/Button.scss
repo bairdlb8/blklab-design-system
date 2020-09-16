@@ -4,8 +4,8 @@
   transition: all 0.25s linear;
   line-height: 1;
   position: relative;
-  height: 50px;
-  font-weight: 600;
+  height: var(--ds-button-height, 40px);
+  font-weight: 700;
 
   .root {
     width: 100%;
@@ -27,8 +27,7 @@
 
   &__text {
     margin: 0 0.5em;
-    letter-spacing: 1px;
-    font-size: 18px;
+    font-size: var(--ds-button-height, 18px);
   }
 
   &__icon {
