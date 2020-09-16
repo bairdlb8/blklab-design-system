@@ -13,24 +13,24 @@ const Pagination = ({
   let pages = Array(totalPages).fill(1)
   if (totalPages > 0) {
     return (
-      <div
-        className={`ds-pagination display-flex justify-content-flex-end ${
-          className ? className : null
-        }`}
-      >
-        {pages.map((page, idx) => {
-          return (
-            <span
-              onClick={() => {
-                onPage(idx + 1)
-              }}
-              className={`ds-page-number px-sm py-xxs ${idx + 1 == currentPage ? 'active' : null}`}
-              key={`page-${idx}`}
-            >
-              {idx + 1}
-            </span>
-          )
-        })}
+      <div className={`ds-pagination display-flex ${className ? className : null}`}>
+        <span className="ds-pagination__pages">
+          {pages.map((page, idx) => {
+            return (
+              <span
+                onClick={() => {
+                  onPage(idx + 1)
+                }}
+                className={`ds-pagination__page-number px-sm py-xxs ${
+                  idx + 1 == currentPage ? 'active' : null
+                }`}
+                key={`page-${idx}`}
+              >
+                {idx + 1}
+              </span>
+            )
+          })}
+        </span>
       </div>
     )
   }

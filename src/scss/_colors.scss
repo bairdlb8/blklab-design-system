@@ -69,6 +69,15 @@ $gray: (
   --gray-color-lighter: rgba(0, 0, 0, 0.1);
   --gray-color-dark: rgba(0, 0, 0, 0.7);
   --gray-color-darker: rgba(0, 0, 0, 0.9);
+  --gray-color-10: rgba(0, 0, 0, 0.1);
+  --gray-color-20: rgba(0, 0, 0, 0.2);
+  --gray-color-30: rgba(0, 0, 0, 0.3);
+  --gray-color-40: rgba(0, 0, 0, 0.4);
+  --gray-color-50: rgba(0, 0, 0, 0.5);
+  --gray-color-60: rgba(0, 0, 0, 0.6);
+  --gray-color-70: rgba(0, 0, 0, 0.7);
+  --gray-color-80: rgba(0, 0, 0, 0.8);
+  --gray-color-90: rgba(0, 0, 0, 0.9);
 
   --text-color-default: #{$ds-color-text-base};
   --text-color-light: #{$ds-color-text-light};

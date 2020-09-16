@@ -1,7 +1,20 @@
 .ds-pagination {
-  span {
+  &__pages {
+    border-radius: 5px;
+    overflow: hidden;
+    border: solid 1px var(--gray-color-20);
+  }
+  &__page-number {
+    display: inline-block;
     transition: all 0.25s linear;
     cursor: pointer;
+    padding: 4px 12px;
+    font-size: 12px;
+    border-right: solid 1px var(--gray-color-20);
+
+    &:last-child {
+      border-right: none;
+    }
 
     &:hover,
     &.active {

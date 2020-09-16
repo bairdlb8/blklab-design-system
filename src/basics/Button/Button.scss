@@ -78,10 +78,11 @@
 
   &[ds-hollow='true'] {
     background-color: transparent;
-    color: var(--text-color-default);
-    border-color: var(--text-color-default);
+    color: var(--gray-color-80);
+    border-color: var(--gray-color-80);
     &:hover {
       background-color: var(--primary-color);
+      border-color: var(--primary-color);
       color: var(--ds-button-color-primary-foreground, #fff);
     }
 

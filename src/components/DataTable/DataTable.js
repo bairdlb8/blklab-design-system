@@ -64,7 +64,7 @@ function DataTable({
   return (
     <section className="ds-data-table">
       <table>
-        {data.length > 0 && (
+        {(data.length > 0 || loading) && (
           <thead className="mb-lg">
             <tr>
               {multiSelect && (
