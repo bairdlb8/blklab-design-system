@@ -24,6 +24,7 @@ import Tag from './basics/Tag'
 import Text from './basics/Text'
 import TextInput from './basics/TextInput'
 import Toggle from './basics/Toggle'
+import RadioButton from './basics/RadioButton'
 export {
   Avatar,
   Button,
@@ -37,7 +38,8 @@ export {
   Tag,
   Text,
   TextInput,
-  Toggle
+  Toggle,
+  RadioButton
 }
 
 //Components
