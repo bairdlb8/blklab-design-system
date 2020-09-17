@@ -25,7 +25,8 @@ const TextInput = forwardRef(
       onChange = null,
       icon,
       iconSide = 'left',
-      clear
+      clear,
+      className = ''
     },
     ref
   ) => {
@@ -55,7 +56,7 @@ const TextInput = forwardRef(
     const isError = () => state.error === true || error === true
 
     return (
-      <div className="ds-input">
+      <div className={`ds-input ${className}`.trim()}>
         <label>{label}</label>
         {helpText && <div className="help">{helpText}</div>}
         <div
