@@ -13,7 +13,7 @@ const TextInput = forwardRef(
       label,
       type = 'text',
       inputMode = 'text',
-      error = false,
+      error,
       errorMessage = '',
       onValidate = () => {},
       required,
@@ -52,14 +52,16 @@ const TextInput = forwardRef(
       }
     }
 
+    const isError = () => state.error === true || error === true
+
     return (
       <div className="ds-input">
         <label>{label}</label>
         {helpText && <div className="help">{helpText}</div>}
         <div
-          className={`ds-input__input ${state.error ? 'has-error' : null} ${
-            fullWidth ? 'full-width' : null
-          }`}
+          className={`ds-input__input ${isError() ? 'has-error' : ''} ${
+            fullWidth ? 'full-width' : ''
+          }`.trim()}
         >
           {icon && iconSide === 'left' && <Icon icon={icon} size="large" />}
           <input
@@ -78,12 +80,16 @@ const TextInput = forwardRef(
           {icon && iconSide === 'right' && <Icon icon={icon} />}
           {clear && <Icon size="large" icon="close-circle-outline" />}
           {type == 'password' && (
-            <span className="button" role="button" onClick={() => setState({ ...state, visible: !state.visible })}>
+            <span
+              className="button"
+              role="button"
+              onClick={() => setState({ ...state, visible: !state.visible })}
+            >
               {!state.visible ? 'Show' : 'Hide'}
             </span>
           )}
         </div>
-        <div className="error">{state.error ? Messages[state.errorState] : ''}</div>
+        <div className="error">{isError() ? Messages[state.errorState] : ''}</div>
       </div>
     )
   }
