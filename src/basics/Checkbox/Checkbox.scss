@@ -95,4 +95,11 @@
       }
     }
   }
+
+  &.has-error {
+    margin-bottom: var(--spacer-2);
+  }
+  .error {
+    color: var(--error-color, #ff0000);
+  }
 }

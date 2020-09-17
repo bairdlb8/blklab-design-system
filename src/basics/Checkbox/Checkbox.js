@@ -39,7 +39,7 @@ const Checkbox = forwardRef(
 
           <span>{label}</span>
         </label>
-        <div className="error">{isError() ? Messages[state.errorState] : ''}</div>
+        <div className="error">{isError() ? errorMessage : ''}</div>
       </>
     )
   }
