@@ -33,6 +33,7 @@
 
     &.has-error {
       border-color: var(--error-color, #ff0000);
+      border-width: 2px;
     }
 
     input {
@@ -57,6 +58,7 @@
 
   &__input:focus-within {
     border-color: var(--primary-color-light);
+    border-width: 2px;
   }
 
   .error {

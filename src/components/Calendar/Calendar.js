@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import './Calendar.scss'
 
-const Calendar = ({className=''}) => {
+const Calendar = ({ className = '' }) => {
   return <div>Calendar</div>
 }
 
