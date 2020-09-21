@@ -11,7 +11,7 @@ const Pagination = ({
   onPage = () => {}
 }) => {
   let pages = Array(totalPages).fill(1)
-  if (totalPages > 0) {
+  if (totalPages > 1) {
     return (
       <div className={`ds-pagination display-flex ${className ? className : null}`}>
         <span className="ds-pagination__pages">
