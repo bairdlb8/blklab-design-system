@@ -5,8 +5,9 @@
   .ds_sort__icons {
     display: inline-block;
     line-height: 1;
-    vertical-align: middle;
+    vertical-align: top;
     .ds-icon {
+      font-size: 1.25em;
       &:first-child {
         margin-bottom: -4px;
       }
@@ -15,7 +16,6 @@
         color: var(--accent-color);
       }
       display: block;
-      width: 20px;
     }
   }
 

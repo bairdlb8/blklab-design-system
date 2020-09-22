@@ -58,8 +58,8 @@ function DataTable({
 
   let _headers = Object.entries(headers)
   let dirMap = {
-    ascending: 'arrow-up',
-    descending: 'arrow-down'
+    ascending: 'arrow-upward-outline',
+    descending: 'arrow-downward-outline'
   }
   return (
     <section className="ds-data-table">
@@ -75,27 +75,38 @@ function DataTable({
               {_headers.map(([key, header], idx) => (
                 <th
                   key={`th-${key}`}
-                  className={`${idx > 0 ? 'md-display-none' : null}`}
+                  className={`cursor-pointer ${idx > 0 ? 'md-display-none' : null}`}
                   role="columnheader"
+                  onClick={
+                    header.sortDirections
+                      ? (ev) => {
+                          console.log(
+                            sortConfig.direction === 'acsending' ? 'descending' : 'ascending'
+                          )
+                          onSort({
+                            key,
+                            direction:
+                              sortConfig.direction === 'acsending' ? 'descending' : 'ascending'
+                          })
+                        }
+                      : null
+                  }
                 >
                   {header.title}
                   {header.sortDirections && (
                     <span className="ds_sort__icons ml-xxs">
                       {header.sortDirections.map((dir) => {
                         return (
-                          <Icon
-                            className={`cursor-pointer ${
-                              sortConfig.key == key && sortConfig.direction == dir ? 'active' : ''
-                            } `}
-                            key={`${key}-${dir}`}
-                            icon={dirMap[dir]}
-                            onClick={(ev) =>
-                              onSort({
-                                key,
-                                direction: dir
-                              })
-                            }
-                          />
+                          sortConfig.key == key &&
+                          sortConfig.direction == dir && (
+                            <Icon
+                              className={`cursor-pointer ${
+                                sortConfig.key == key && sortConfig.direction == dir ? 'active' : ''
+                              } `}
+                              key={`${key}-${dir}`}
+                              icon={dirMap[dir]}
+                            />
+                          )
                         )
                       })}
                     </span>

@@ -26,9 +26,9 @@ export const useSortableData = (items, config = { key: null, direction: null }) 
   }, [items, sortConfig])
 
   const onSort = ({ key, direction = 'ascending' }) => {
-    // if (sortConfig && sortConfig.key === key && sortConfig.direction === 'ascending') {
-    //   direction = 'descending'
-    // }
+    if (sortConfig && sortConfig.key === key && sortConfig.direction === 'ascending') {
+      direction = 'descending'
+    }
     setSortConfig({ key, direction })
   }
 
