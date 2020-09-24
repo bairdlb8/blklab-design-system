@@ -26,7 +26,8 @@ const TextInput = forwardRef(
       icon,
       iconSide = 'left',
       clear,
-      className = ''
+      className = '',
+      autoComplete = false
     },
     ref
   ) => {
@@ -77,6 +78,7 @@ const TextInput = forwardRef(
             onChange={onChange}
             required={required}
             onBlur={validate}
+            autoComplete={autoComplete}
           />
           {icon && iconSide === 'right' && <Icon icon={icon} />}
           {clear && <Icon size="large" icon="close-circle-outline" />}
