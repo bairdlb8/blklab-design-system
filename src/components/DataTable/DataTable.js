@@ -75,7 +75,9 @@ function DataTable({
               {_headers.map(([key, header], idx) => (
                 <th
                   key={`th-${key}`}
-                  className={`cursor-pointer ${idx > 0 ? 'md-display-none' : null}`}
+                  className={`cursor-pointer ${idx > 0 ? 'md-display-none' : ''} ${
+                    header.sortDirections ? 'sortable' : ''
+                  }`.trim()}
                   role="columnheader"
                   onClick={
                     header.sortDirections

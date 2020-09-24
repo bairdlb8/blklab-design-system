@@ -31,11 +31,20 @@
         //background-color: #fafafa;
       }
       &:hover {
-        background-color: var(--secondary-color);
+        td {
+          background-color: var(--secondary-color);
+        }
       }
       th,
       td {
         padding: var(--ds-table-cell-padding, var(--spacer-2));
+      }
+
+      th {
+        &.sortable:hover {
+          background-color: var(--secondary-color);
+          cursor: pointer;
+        }
       }
 
       th,

@@ -1,13 +1,22 @@
 .ds-avatar {
   border-radius: 50%;
   overflow: hidden;
-  width: 28px;
-  height: 28px;
-  display: inline-block;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  background-color: var(--primary-color);
+  justify-content: center;
+  align-items: center;
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  &__initials {
+    font-size: 0.85em;
+    letter-spacing: 0.025em;
+    color: #fff;
   }
 }
