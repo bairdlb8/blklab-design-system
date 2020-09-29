@@ -27,7 +27,7 @@ const TextInput = forwardRef(
       iconSide = 'left',
       clear,
       className = '',
-      autoComplete = false
+      autoComplete = 'false'
     },
     ref
   ) => {
@@ -61,9 +61,9 @@ const TextInput = forwardRef(
         <label>{label}</label>
         {helpText && <div className="help">{helpText}</div>}
         <div
-          className={`ds-input__input ${isError() ? 'has-error' : ''} ${
-            fullWidth ? 'full-width' : ''
-          }`.trim()}
+          className={`ds-input__input  ${disabled ? 'disabled' : ''} ${
+            isError() ? 'has-error' : ''
+          } ${fullWidth ? 'full-width' : ''}`.trim()}
         >
           {icon && iconSide === 'left' && <Icon icon={icon} size="large" />}
           <input
