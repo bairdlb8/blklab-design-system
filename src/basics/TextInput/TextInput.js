@@ -27,7 +27,7 @@ const TextInput = forwardRef(
       iconSide = 'left',
       clear,
       className = '',
-      autoComplete = 'false'
+      autoComplete = 'off'
     },
     ref
   ) => {
