@@ -49,7 +49,8 @@ const Button = ({
   onClick,
   onKeyUp,
   onTouchEnter,
-  children
+  children,
+  testId
 }) => {
   let [state, setState] = useState({
     uiState: 'idle'
@@ -63,7 +64,7 @@ const Button = ({
 
   const buttonInternals = (
     <button
-      data-testid="button"
+      data-testid={`${testId ? testId : 'button'}`}
       type={submit ? 'submit' : 'button'}
       className={`ds-button text-align-${textAlign} ${
         fullWidth ? 'display-block' : 'display-inline-flex'

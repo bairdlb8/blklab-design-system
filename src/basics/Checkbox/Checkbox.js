@@ -3,7 +3,7 @@ import './Checkbox.scss'
 //Needs to support spacebar selection
 
 const Checkbox = forwardRef(
-  ({ label = '', checked = false, onChange = null, name, error, errorMessage }, ref) => {
+  ({ label = '', checked = false, onChange = null, name, error, errorMessage, testId }, ref) => {
     const isError = () => error
     return (
       <>
@@ -14,6 +14,7 @@ const Checkbox = forwardRef(
             onChange={onChange ? onChange : null}
             ref={ref}
             name={name}
+            data-testid={`${testId ? testId : `checkbox-${name}`}`}
           />
           <svg width="32" height="32" viewBox="-4 -4 39 39" aria-hidden="true" focusable="false">
             <rect

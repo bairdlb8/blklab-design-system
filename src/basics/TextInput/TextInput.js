@@ -27,7 +27,8 @@ const TextInput = forwardRef(
       iconSide = 'left',
       clear,
       className = '',
-      autoComplete = 'off'
+      autoComplete = 'off',
+      testId
     },
     ref
   ) => {
@@ -79,6 +80,7 @@ const TextInput = forwardRef(
             required={required}
             onBlur={validate}
             autoComplete={autoComplete}
+            data-testid={`${testId ? testId : `input-${name}`}`}
           />
           {icon && iconSide === 'right' && <Icon icon={icon} />}
           {clear && <Icon size="large" icon="close-circle-outline" />}
