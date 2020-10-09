@@ -14,9 +14,10 @@
   }
 
   .radio__label {
-    line-height: 1;
-    font-weight: bold;
-    font-size: 1.25rem;
+    font-size: 1rem;
+    line-height: inherit;
+    font-weight: normal;
+    cursor: pointer;
   }
 
   .radio__input {
@@ -62,4 +63,6 @@
   border-radius: 50%;
   border: 0.1em solid var(--primary-color);
   transform: translateY(-0.05em);
+  font-weight: normal;
+  cursor: pointer;
 }

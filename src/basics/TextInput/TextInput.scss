@@ -4,8 +4,29 @@
     font-weight: bold;
     line-height: 1.3;
     margin-bottom: 0.65rem;
-    font-size: 1.25em;
+    font-size: 1em;
   }
+
+  &.medium {
+    .ds-input__input {
+      width: 40ch;
+    }
+  }
+
+  &.small {
+    .ds-input__input {
+      width: 20ch;
+    }
+  }
+
+  &.tiny {
+    .ds-input__input {
+      width: 5em;
+      padding: 0 var(--spacer-1);
+      text-align: center;
+    }
+  }
+
   .help {
     font-weight: normal;
     color: var(--gray-color-dark, #999);
@@ -19,7 +40,8 @@
     align-items: center;
     transition: border-color var(--animation-speed-fast);
     padding: 0 var(--spacer-2);
-    max-width: 85ch;
+    width: 50ch;
+    max-width: 100%;
 
     &.full-width {
       width: 100%;
@@ -40,7 +62,7 @@
       display: inline-block;
       padding: 0;
       height: var(--button-height, 45px);
-      font-size: 18px;
+      font-size: 1rem;
       transition: all var(--animation-speed-fast, 0.25s) var(--animation-easing-linear);
       border: none;
       width: 100%;

@@ -56,7 +56,8 @@
 
   &[ds-secondary='true'] {
     background-color: var(--ds-button-color-secondary-background);
-    color: var(--ds-button-color-secondary-foreground, #fff);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
     &:hover {
       background-color: var(--secondary-color-dark);
     }
@@ -78,8 +79,8 @@
 
   &[ds-hollow='true'] {
     background-color: transparent;
-    color: var(--gray-color-80);
-    border-color: var(--gray-color-80);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
     &:hover {
       background-color: var(--primary-color);
       border-color: var(--primary-color);

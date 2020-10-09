@@ -1,8 +1,7 @@
 .ds-checkbox {
   cursor: pointer;
-
   display: flex;
-  align-items: start;
+  align-items: center;
 
   --checked-state-bg-color: var(--accent-color-lighter);
   --checked-state-check-color: var(--secondary-color-darker);
@@ -13,8 +12,8 @@
     color: #000;
     vertical-align: middle;
     line-height: 1;
-    font-weight: bold;
-    font-size: 1.25em;
+    font-size: 1em;
+    font-weight: normal;
   }
 
   input[type='checkbox'] {
