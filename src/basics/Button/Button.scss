@@ -6,6 +6,7 @@
   position: relative;
   height: var(--ds-button-height, 40px);
   font-weight: 700;
+  align-items: center;
 
   .root {
     width: 100%;
@@ -13,6 +14,7 @@
     height: 100%;
     padding: 0 var(--ds-button-padding-horizontal);
     justify-content: center;
+    align-items: center;
 
     &.fade-out {
       opacity: 0;
@@ -52,6 +54,13 @@
 
     &:focus {
     }
+
+    &:not([ds-hollow='true']) .ds-loading {
+      border-top: 0.25em solid rgba(255, 255, 255, 0.15);
+      border-right: 0.25em solid rgba(255, 255, 255, 0.15);
+      border-bottom: 0.25em solid rgba(255, 255, 255, 0.15);
+      border-left: 0.25em solid rgba(255, 255, 255, 1);
+    }
   }
 
   &[ds-secondary='true'] {
@@ -67,9 +76,30 @@
   }
 
   &.loading {
+    .ds-loading {
+      position: absolute;
+      transform: translateX(-23px);
+      left: calc(50% - 1.75em);
+    }
+
+    .ds-loading,
+    .ds-loading:after {
+      width: 2.5em;
+      height: 2.5em;
+    }
   }
 
-  &.destructive {
+  &[ds-destructive='true'] {
+    background-color: var(--error-color);
+    color: var(--light-text-color, #fff);
+
+    .ds-loading {
+      border-top: 0.25em solid rgba(255, 255, 255, 0.15);
+      border-right: 0.25em solid rgba(255, 255, 255, 0.15);
+      border-bottom: 0.25em solid rgba(255, 255, 255, 0.15);
+      border-left: 0.25em solid rgba(255, 255, 255, 1);
+    }
+
     &:hover {
     }
 

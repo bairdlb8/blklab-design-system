@@ -68,11 +68,12 @@ const Button = ({
       type={submit ? 'submit' : 'button'}
       className={`ds-button text-align-${textAlign} ${
         fullWidth ? 'display-block' : 'display-inline-flex'
-      } ${className}`}
+      } ${loading ? 'loading' : ''} ${className}`.trim()}
       disabled={disabled}
       ds-hollow={hollow ? 'true' : null}
       ds-primary={!secondary && !destructive && !disabled ? 'true' : null}
       ds-secondary={secondary && !destructive && !disabled ? 'true' : null}
+      ds-destructive={destructive && !disabled ? 'true' : null}
       ds-icon={icon !== 'none' ? 'true' : null}
       ds-icon-side={icon !== 'none' ? iconSide : null}
       ds-size={size}

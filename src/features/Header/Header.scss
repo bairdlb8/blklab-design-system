@@ -17,14 +17,14 @@
   min-height: var(--header-height);
 
   .logo {
-    width: 200px;
+    width: 120px;
     //padding: 30px 0;
     text-align: center;
   }
 
   nav {
     display: flex;
-    grid-column: 3/-1;
+    grid-column: 2/-1;
     justify-content: center;
     align-items: center;
     ul {
