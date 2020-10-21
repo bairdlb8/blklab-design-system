@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import './RadioButton.scss'
 
 const RadioButton = forwardRef(
-  ({ label = '', name = '', value = '', className = '', testId }, ref) => {
+  ({ label = '', name = '', value = '', className = '', testId, onChange }, ref) => {
     return (
       <label className={`ds-radio-button radio-before ${className}`}>
         <span className="radio__input">
@@ -14,6 +14,7 @@ const RadioButton = forwardRef(
             value={value}
             ref={ref}
             data-testid={`${testId ? testId : `radio-${name}-${value}`}`}
+            onChange={onChange}
           />
           <span className="radio__control"></span>
         </span>

@@ -4,11 +4,18 @@ import PropTypes from 'prop-types'
 import './Toggle.scss'
 
 const Toggle = forwardRef(
-  ({ name = '', label = '', leftLabel = true, className = '', disabled }, ref) => {
+  ({ name = '', label = '', leftLabel = true, className = '', disabled, onChange }, ref) => {
     const id = `toggle-${Math.random(0, 10000)}`
     return (
       <div className={`ds-toggle ${leftLabel ? 'flip' : null}`}>
-        <input type="checkbox" name={name} id={id} disabled={disabled} ref={ref} />
+        <input
+          type="checkbox"
+          name={name}
+          id={id}
+          disabled={disabled}
+          ref={ref}
+          onChange={onChange}
+        />
         <label htmlFor={id}>{label}</label>
       </div>
     )

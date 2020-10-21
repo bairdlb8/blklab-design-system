@@ -28,7 +28,9 @@ const TextInput = forwardRef(
       clear,
       className = '',
       autoComplete = 'off',
-      testId
+      testId,
+      onFocus,
+      onBlur
     },
     ref
   ) => {
@@ -78,7 +80,13 @@ const TextInput = forwardRef(
             disabled={disabled ? true : null}
             onChange={onChange}
             required={required}
-            onBlur={validate}
+            onBlur={(ev) => {
+              validate(ev)
+              if (onBlur) {
+                onBlur(ev)
+              }
+            }}
+            onFocus={onFocus}
             autoComplete={autoComplete}
             data-testid={`${testId ? testId : `input-${name}`}`}
           />

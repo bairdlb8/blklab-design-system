@@ -82,7 +82,7 @@ const Button = ({
       aria-controls={ariaControls ? ariaControls : null}
       aria-pressed={ariaPressed ? true : false}
       onClick={onClick ? onClick : null}
-      onKeyUp={onClick ? onClick : onKeyUp ? onKeyUp : null}
+      // onKeyUp={onClick ? onClick : onKeyUp ? onKeyUp : null}
     >
       <span className={`root ${loading ? 'fade-out' : ''}`}>
         {iconSide === 'left' && icon !== 'none' && theIcon}
