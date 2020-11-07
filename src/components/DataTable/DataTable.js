@@ -82,9 +82,6 @@ function DataTable({
                   onClick={
                     header.sortDirections
                       ? (ev) => {
-                          console.log(
-                            sortConfig.direction === 'acsending' ? 'descending' : 'ascending'
-                          )
                           onSort({
                             key,
                             direction:

@@ -11,7 +11,9 @@ function Footer({ className = '' }) {
           Copyright © {new Date().getFullYear()} Wisconsin School Music Association
         </div>
         <div className="pr-10  display-flex align-items-center justify-content-flex-end">
-          <a href="">wsmamusic.org</a>
+          <a href="https://wsmamusic.org" target="_blank" rel="noopener nofollow">
+            wsmamusic.org
+          </a>
         </div>
       </GridContainer>
     </footer>

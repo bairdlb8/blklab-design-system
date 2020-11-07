@@ -1,6 +1,6 @@
 {
   "name": "blklab-design-system",
-  "version": "0.2.6",
+  "version": "0.2.10",
   "main": "dist/index.js",
   "author": "Baird Lackner-Buckingham",
   "license": "MIT",

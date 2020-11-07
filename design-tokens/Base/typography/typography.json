@@ -2,10 +2,10 @@
   "ds": {
     "typography": {
       "header": {
-        "value": "Lato"
+        "value": "'aktiv-grotesk'"
       },
       "body": {
-        "value": "Lato"
+        "value": "'aktiv-grotesk'"
       },
       "scale": {
         "key": "minorThird",
